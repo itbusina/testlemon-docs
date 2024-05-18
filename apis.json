@@ -1,0 +1,81 @@
+{
+    "name": "APIs Demo Collection",
+    "baseAddress": "https://dummyjson.com",
+    "requests": [
+      {
+        "name": "auth",
+        "path": "/auth/login",
+        "method": "POST",
+        "headers": [
+          "Content-Type: application/json"
+        ],
+        "body": "{\"username\":\"kminchelle\",\"password\":\"0lelplR\"}",
+        "context": [
+          {
+            "name": "userId",
+            "type": "variable",
+            "pattern": "\"id\":\\s*(\\d+)"
+          },
+          {
+            "name": "token",
+            "type": "secret",
+            "pattern": "\"token\":\\s*\"([^\"]+)\""
+          }
+        ]
+      },
+      {
+        "dependsOn":"auth",
+        "path": "/auth/me",
+        "headers": [
+            "Authorization: Bearer ${{ context.token }}"
+        ]
+      },
+      {
+        "path": "/products",
+        "method": "GET"
+      },
+      {
+        "path": "/products/1",
+        "method": "GET"
+      },
+      {
+        "dependsOn":"auth",
+        "path": "/carts/add",
+        "method": "POST",
+        "headers": [
+          "Content-Type: application/json"
+        ],
+        "body": "{\"userId\":${{ context.userId }},\"products\":[{\"id\":1,\"quantity\":2}]}"
+      },
+      {
+        "path": "/users",
+        "method": "GET"
+      },
+      {
+        "path": "/users/1",
+        "method": "GET"
+      },
+      {
+        "path": "/users/search?q=John",
+        "method": "GET"
+      },
+      {
+        "dependsOn":"auth",
+        "path": "/posts/add",
+        "method": "POST",
+        "headers": [
+          "Content-Type: application/json"
+        ],
+        "body": "{\"title\":\"New Post\",\"body\":\"Post content\",\"userId\":${{ context.userId }}}"
+      },
+      {
+        "dependsOn": "auth",
+        "path": "/comments/add",
+        "method": "POST",
+        "headers": [
+          "Content-Type: application/json"
+        ],
+        "body": "{\"body\":\"New Comment\",\"postId\":1,\"userId\":${{ context.userId }}}"
+      }
+    ]
+  }
