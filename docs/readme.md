@@ -369,7 +369,7 @@ docker run \
 ```shell
 docker run \
           itbusina/apibee:latest \
-            -c https://raw.githubusercontent.com/itbusina/public/main/minimal.json -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json -l eyJdsa77b2FkIjp7IklkIjoiZ...
 ```
 
 ### Run collection from URL with authorization and required http headers.
