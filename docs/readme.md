@@ -24,10 +24,10 @@ docker run -v ./data:/app/data itbusina/apibee:latest -c data/collection.json
 ```
 
 # Default settings
-- Requests are sent via HTTP using 'GET' method, if not specified.
-- Requests are executed sequentially. Pass '-p' argument to execute in parallel.
+- Requests are sent via HTTP using ```GET``` method, if not specified.
+- Requests are executed sequentially. Pass ```-p``` argument to execute in parallel.
 - Request is considered successful if the response contains the successful status code.
-- When the directory is passed as a source, all files with '*.json' extension from this directory and all subdirectories are read.
+- When the directory is passed as a source, all files with ```*.json``` extension from this directory and all subdirectories are read.
 
 # Documentation
 
@@ -247,9 +247,11 @@ docker run -v ./data:/app/data itbusina/apibee:latest -c data/collection.json
 ```
 
 #### Supported functions
+```text
 - ${{ func.utcnow() }} - DateTime.UtcNow.ToString("o")
 - ${{ func.random() }} - new Random().Next().ToString()
 - ${{ func.guid() }} - Guid.NewGuid().ToString()
+```
 
 ### Validators
 
@@ -369,7 +371,7 @@ docker run \
 ```shell
 docker run \
           itbusina/apibee:latest \
-            -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c https://raw.githubusercontent.com/itbusina/public/main/minimal.json -l eyJdsa77b2FkIjp7IklkIjoiZ...
 ```
 
 ### Run collection from URL with authorization and required http headers.
@@ -479,15 +481,14 @@ jobs:
 ```
 
 # Features
-- Local run from docker.
-- Integration with GitHub.
-- Filtering collection requests by tags.
-- Collections configuration in the inline script, directory, file, public or authorized url. Multiple sources are also supported.
+- Run from docker.
+- Integration with GitHub Actions.
+- Filtering API requests using tags.
+- Collections can be specified using inline script, directory path, file path, public or secured url. Multiple sources are also supported.
 - Parallel/Sequential requests execution.
-- Support of variables and secrets in the collection.
-- Support of functions in the collection.
+- Variables, secrets and functions support inside the collection.
 - Support dependencies between requests.
-- Support using context between requests.
-- Ability to execute multiple runs for the collection.
+- Support sharing context between requests.
+- Ability to execute collection multiple times.
 - Ability to specify the delay between runs.
 - Ability to execute collection in the loop with interval.
