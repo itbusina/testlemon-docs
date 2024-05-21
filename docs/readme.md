@@ -253,9 +253,9 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 
 #### Supported functions
 ```text
-- ${{{{ func.utcnow() }}}} - DateTime.UtcNow.ToString("o")
-- ${{{{  func.random() }}}} - new Random().Next().ToString()
-- ${{{{  func.guid() }}}} - Guid.NewGuid().ToString()
+- ${{func.utcnow()}} - DateTime.UtcNow.ToString("o")
+- ${{func.random()}} - new Random().Next().ToString()
+- ${{func.guid()}} - Guid.NewGuid().ToString()
 ```
 
 ### Validators
