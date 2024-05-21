@@ -380,7 +380,7 @@ docker run \
 ```shell
 docker run \
           itbusina/apibee:latest \
-            -c https://raw.githubusercontent.com/itbusina/public/main/minimal.json \
+            -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json \
             -l $license
 ```
 
