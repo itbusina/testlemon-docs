@@ -23,6 +23,11 @@ Here is 2 minimal steps to test you API.
 docker run -v ./data:/app/data itbusina/apibee:latest -c data/collection.json
 ```
 
+## OR run the example
+```shell
+docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json
+```
+
 # Default settings
 - Requests are sent via HTTP using ```GET``` method, if not specified.
 - Requests are executed sequentially. Pass ```-p``` argument to execute in parallel.
@@ -248,13 +253,10 @@ docker run -v ./data:/app/data itbusina/apibee:latest -c data/collection.json
 
 #### Supported functions
 ```text
-<p>${{ func.utcnow() }} - DateTime.UtcNow.ToString("o")</p>
-- ${{ func.utcnow() }} - DateTime.UtcNow.ToString("o")
-- ${{ func.random() }} - new Random().Next().ToString()
-- ${{ func.guid() }} - Guid.NewGuid().ToString()
+- ${{{{ func.utcnow() }}}} - DateTime.UtcNow.ToString("o")
+- ${{{{  func.random() }}}} - new Random().Next().ToString()
+- ${{{{  func.guid() }}}} - Guid.NewGuid().ToString()
 ```
-
-<p>${{ func.utcnow() }} - DateTime.UtcNow.ToString("o")</p>
 
 ### Validators
 
@@ -331,7 +333,8 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -l $license
 ```
 
 ### Run collection inline.
@@ -351,7 +354,8 @@ $collection = @'
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c $collection -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c $collection \
+            -l $license
 ```
 
 ### Run collections from multiple files
@@ -359,7 +363,8 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection1.json data/collection2.json -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection1.json data/collection2.json \
+            -l $license
 ```
 
 ### Run collections from directory
@@ -367,14 +372,16 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/ -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/ \
+            -l $license
 ```
 
 ### Run collection from URL.
 ```shell
 docker run \
           itbusina/apibee:latest \
-            -c https://raw.githubusercontent.com/itbusina/public/main/minimal.json -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c https://raw.githubusercontent.com/itbusina/public/main/minimal.json \
+            -l $license
 ```
 
 ### Run collection from URL with authorization and required http headers.
@@ -383,7 +390,7 @@ docker run \
           itbusina/apibee:latest \
             -c https://api.github.com/repos/user/repo/contents/data/collection.json \
             -h "Authorization: Bearer ghp_dsa987dsad67d8s6a876d7as" "User-Agent:ApiBee" "Accept:application/vnd.github.raw+json" \
-            -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -l $license
 ```
 
 ### Run collection in parallel
@@ -391,7 +398,9 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -p -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -p \
+            -l $license
 ```
 
 ### Run collection with multiple tags filter
@@ -399,7 +408,9 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -t smoke regression -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -t smoke regression \
+            -l $license
 ```
 
 ### Save report to output folder
@@ -407,7 +418,9 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -o output -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -o output \
+            -l $license
 ```
 
 ### Pass variables in collection
@@ -415,7 +428,9 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -v host=https://dummyjson.com -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -v host=https://dummyjson.com \
+            -l $license
 ```
 
 ### Pass secrets in collection
@@ -423,7 +438,9 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -s login=admin,password=Welcome1! -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -s login=admin,password=Welcome1! \
+            -l $license
 ```
 
 ### Run collection 5 times
@@ -431,7 +448,9 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -r 5 -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -r 5 \
+            -l $license
 ```
 
 ### Run collection 5 times with 1s delay
@@ -439,7 +458,10 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -r 5 -d 1000 -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -r 5 \
+            -d 1000 \
+            -l $license
 ```
 
 ### Run collection in loop with 5s interval without exit
@@ -447,12 +469,16 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection.json -i 5000 -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -i 5000 \
+            -l $license
 ```
 
 ## Integration with GitHub Actions
+
+### Simple tests run
 ```yaml
-name: CI Integration
+name: Simple tests
 
 on:
   push:
@@ -466,19 +492,95 @@ jobs:
     steps:
     - uses: actions/checkout@v4
         
-    - name: Execute API Requests
+    - name: Execute API tests
       run: |
         docker run \
           -v ./data:/app/data \
           -v ./output:/app/output \
           itbusina/apibee:latest \
-            -c data/collection.json -p -o output -l eyJdsa77b2FkIjp7IklkIjoiZ...
+            -c data/collection.json \
+            -p \
+            -o output \
+            -l $license
 
     - name: Archive output results
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: report
+        path: ./output/
+
+```
+
+### Run API tests before deployment
+```yaml
+name: Run API tests before deployment
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - name: Code checkout
+      uses: actions/checkout@v4
+
+    - name: Log in to Registry
+      uses: docker/login-action@v3.1.0
+      with:
+        registry: https://index.docker.io/v1/
+        username: ${{ vars.DOCKERUSERNAME }}
+        password: ${{ secrets.DOCKERACCESSTOKEN }}
+
+    - name: Build Container Image
+      uses: docker/build-push-action@v5.3.0
+      with:
+        push: false
+        load: true
+        tags: mynewapi:${{ github.sha }}
+        file: ./src/webapp/Dockerfile
+
+    - name: Create Docker Network
+      run: docker network create vnet
+        
+    - name: Run mynewapi in docker for testing
+      run: |
+        docker run -d \
+          -p 8080:8080 \
+          --name mynewapi \
+          --network vnet \
+          mynewapi:${{ github.sha }}
+        
+    - name: Test Mock API 
+      uses: itbusina/apibee-action@v0.1.15-alpha
+      with:
+          input_dir: ./test
+          output_dir: ./output
+          network: container:mynewapi
+          args: |
+            --collections ./test/tests.json \
+            --variables host=http://mynewapi:8080 \
+            --output output \
+            --license ${{ secrets.APIBEELICENSE }}
+        
+    - name: Build image and push
+      uses: docker/build-push-action@v5.3.0
+      with:
+        push: true
+        tags: |
+          index.docker.io/${{ vars.DOCKERUSERNAME }}/apimock:latest
+        file: ./src/webapp/Dockerfile
+
+    - name: Archive output results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: apibee test report
         path: ./output/
 
 ```
