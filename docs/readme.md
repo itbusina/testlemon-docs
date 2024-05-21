@@ -32,7 +32,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 - Requests are sent via HTTP using ```GET``` method, if not specified.
 - Requests are executed sequentially. Pass ```-p``` argument to execute in parallel.
 - Request is considered successful if the response contains the successful status code.
-- When the directory is passed as a source, all files with ```*.json``` extension from this directory and all subdirectories are read.
+- When the directory is passed as a source, all files with ```*.json``` extension are read from this directory and all subdirectories.
 
 # Documentation
 
@@ -45,9 +45,6 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
     "requests": [
       {
         "path": "/users"
-      },
-      {
-        "path": "/products"
       }
     ]
 }
@@ -59,9 +56,6 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
     "requests": [
       {
         "path": "https://dummyjson.com/users"
-      },
-      {
-        "path": "https://dummyjson.com/products"
       }
     ]
 }
@@ -322,19 +316,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 
 ### Display help
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            --help
-```
-
-### Specify the license
-```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
-            -l $license
+docker run itbusina/apibee:latest --help
 ```
 
 ### Run collection from file. (option 1)
@@ -348,6 +330,13 @@ docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json
+```
+
+### Specify the license and collection
+```shell
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
+            -l $license
 ```
 
 ### Run collection inline.
@@ -364,10 +353,7 @@ $collection = @'
 }
 '@
 
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c $collection
+docker run itbusina/apibee:latest -c $collection
 ```
 
 ### Run collections from multiple files
@@ -388,117 +374,92 @@ docker run \
 
 ### Run collection from URL.
 ```shell
-docker run \
-          itbusina/apibee:latest \
-            -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json
+docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json
 ```
 
 ### Run collection from URL with authorization and required http headers.
 ```shell
-docker run \
-          itbusina/apibee:latest \
+docker run itbusina/apibee:latest \
             -c https://api.github.com/repos/user/repo/contents/data/collection.json \
             -h "Authorization: Bearer ghp_dsa987dsad67d8s6a876d7as" "User-Agent:ApiBee" "Accept:application/vnd.github.raw+json"
 ```
 
 ### Run collection in parallel
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             -p
 ```
 
 ### Run collection with multiple tags filter
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             -t smoke regression
 ```
 
 ### Save report to output folder
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             -o output
 ```
 
 ### Pass variables in collection
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             -v host=https://dummyjson.com
 ```
 
 ### Pass secrets in collection
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             -s login=admin,password=Welcome1!
 ```
 
 ### Run collection 5 times
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             -r 5
 ```
 
 ### Run collection 5 times with 1s delay
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             -r 5 \
             -d 1000
 ```
 
 ### Run collection in loop with 5s interval without exit
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             -i 5000
 ```
 
 ### Display details about requests and responses 
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             --verbose
 ```
 
 ### Save details about requests and responses to the file
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             --verbose \
             > output.json
 ```
 
 ### Display and save details about requests and responses to the file
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/apibee:latest \
-            -c data/collection.json \
+docker run itbusina/apibee:latest \
+            -c "$(<collection.json)" \
             --verbose \
             | tee output.json
 ```
@@ -523,8 +484,7 @@ jobs:
         
     - name: Execute API tests
       run: |
-        docker run \
-          itbusina/apibee:latest \
+        docker run itbusina/apibee:latest \
             -c "$(<data/collection.json)" \
             -p \
             -o output \
