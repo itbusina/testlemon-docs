@@ -474,6 +474,35 @@ docker run \
             -i 5000
 ```
 
+### Display details about requests and responses 
+```shell
+docker run \
+          -v ./:/app/data \
+          itbusina/apibee:latest \
+            -c data/collection.json \
+            --verbose
+```
+
+### Save details about requests and responses to the file
+```shell
+docker run \
+          -v ./:/app/data \
+          itbusina/apibee:latest \
+            -c data/collection.json \
+            --verbose \
+            > output.json
+```
+
+### Display and save details about requests and responses to the file
+```shell
+docker run \
+          -v ./:/app/data \
+          itbusina/apibee:latest \
+            -c data/collection.json \
+            --verbose \
+            | tee output.json
+```
+
 ## Integration with GitHub Actions
 
 ### Simple tests run
@@ -495,19 +524,19 @@ jobs:
     - name: Execute API tests
       run: |
         docker run \
-          -v ./output:/app/output \
           itbusina/apibee:latest \
             -c "$(<data/collection.json)" \
             -p \
             -o output \
-            -l $license
+            -l $license \
+            > simple_test.txt
 
     - name: Archive output results
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: report
-        path: ./output/
+        path: simple_test.txt
 
 ```
 
