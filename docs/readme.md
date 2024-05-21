@@ -20,10 +20,10 @@ Here is 2 minimal steps to test you API.
 
 ## Run the docker image
 ```shell
-docker run -v ./data:/app/data itbusina/apibee:latest -c data/collection.json
+docker run itbusina/apibee:latest -c "$(<collection.json)"
 ```
 
-## OR run the example
+## Or run the example
 ```shell
 docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json
 ```
@@ -253,9 +253,9 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 
 #### Supported functions
 ```text
-- ${{func.utcnow()}} - DateTime.UtcNow.ToString("o")
-- ${{func.random()}} - new Random().Next().ToString()
-- ${{func.guid()}} - Guid.NewGuid().ToString()
+- func.utcnow() - Curent UTC datetime
+- func.random() - Random number
+- func.guid() - New guid
 ```
 
 ### Validators
@@ -328,13 +328,26 @@ docker run \
             --help
 ```
 
-### Run collection from file.
+### Specify the license
 ```shell
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json \
             -l $license
+```
+
+### Run collection from file. (option 1)
+```shell
+docker run itbusina/apibee:latest -c "$(<collection.json)"
+```
+
+### Run collection from file. (option 2)
+```shell
+docker run \
+          -v ./:/app/data \
+          itbusina/apibee:latest \
+            -c data/collection.json
 ```
 
 ### Run collection inline.
@@ -354,8 +367,7 @@ $collection = @'
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c $collection \
-            -l $license
+            -c $collection
 ```
 
 ### Run collections from multiple files
@@ -363,8 +375,7 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/collection1.json data/collection2.json \
-            -l $license
+            -c data/collection1.json data/collection2.json
 ```
 
 ### Run collections from directory
@@ -372,16 +383,14 @@ docker run \
 docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
-            -c data/ \
-            -l $license
+            -c data/
 ```
 
 ### Run collection from URL.
 ```shell
 docker run \
           itbusina/apibee:latest \
-            -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json \
-            -l $license
+            -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json
 ```
 
 ### Run collection from URL with authorization and required http headers.
@@ -389,8 +398,7 @@ docker run \
 docker run \
           itbusina/apibee:latest \
             -c https://api.github.com/repos/user/repo/contents/data/collection.json \
-            -h "Authorization: Bearer ghp_dsa987dsad67d8s6a876d7as" "User-Agent:ApiBee" "Accept:application/vnd.github.raw+json" \
-            -l $license
+            -h "Authorization: Bearer ghp_dsa987dsad67d8s6a876d7as" "User-Agent:ApiBee" "Accept:application/vnd.github.raw+json"
 ```
 
 ### Run collection in parallel
@@ -399,8 +407,7 @@ docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json \
-            -p \
-            -l $license
+            -p
 ```
 
 ### Run collection with multiple tags filter
@@ -409,8 +416,7 @@ docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json \
-            -t smoke regression \
-            -l $license
+            -t smoke regression
 ```
 
 ### Save report to output folder
@@ -419,8 +425,7 @@ docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json \
-            -o output \
-            -l $license
+            -o output
 ```
 
 ### Pass variables in collection
@@ -429,8 +434,7 @@ docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json \
-            -v host=https://dummyjson.com \
-            -l $license
+            -v host=https://dummyjson.com
 ```
 
 ### Pass secrets in collection
@@ -439,8 +443,7 @@ docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json \
-            -s login=admin,password=Welcome1! \
-            -l $license
+            -s login=admin,password=Welcome1!
 ```
 
 ### Run collection 5 times
@@ -449,8 +452,7 @@ docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json \
-            -r 5 \
-            -l $license
+            -r 5
 ```
 
 ### Run collection 5 times with 1s delay
@@ -460,8 +462,7 @@ docker run \
           itbusina/apibee:latest \
             -c data/collection.json \
             -r 5 \
-            -d 1000 \
-            -l $license
+            -d 1000
 ```
 
 ### Run collection in loop with 5s interval without exit
@@ -470,8 +471,7 @@ docker run \
           -v ./:/app/data \
           itbusina/apibee:latest \
             -c data/collection.json \
-            -i 5000 \
-            -l $license
+            -i 5000
 ```
 
 ## Integration with GitHub Actions
@@ -495,10 +495,9 @@ jobs:
     - name: Execute API tests
       run: |
         docker run \
-          -v ./data:/app/data \
           -v ./output:/app/output \
           itbusina/apibee:latest \
-            -c data/collection.json \
+            -c "$(<data/collection.json)" \
             -p \
             -o output \
             -l $license
