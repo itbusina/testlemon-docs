@@ -248,10 +248,13 @@ docker run -v ./data:/app/data itbusina/apibee:latest -c data/collection.json
 
 #### Supported functions
 ```text
+<p>${{ func.utcnow() }} - DateTime.UtcNow.ToString("o")</p>
 - ${{ func.utcnow() }} - DateTime.UtcNow.ToString("o")
 - ${{ func.random() }} - new Random().Next().ToString()
 - ${{ func.guid() }} - Guid.NewGuid().ToString()
 ```
+
+<p>${{ func.utcnow() }} - DateTime.UtcNow.ToString("o")</p>
 
 ### Validators
 
