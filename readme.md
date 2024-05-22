@@ -77,6 +77,9 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 ```
 
 ### Collection with dependant requests
+
+Use ```name``` and ```dependsOn``` request properties to create a dependency between requests
+
 ```json
 {
     "name": "Collection with dependant requests",
@@ -99,6 +102,11 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 ```
 
 ### Collection with sharing context between requests
+
+Use ```context``` property of request to save the context. The key to the context is defined by ```name``` property. Define the type, it can be ```variable``` (default) or ```secret```. Secret values are masked in the output. Use ```pattern``` property to define the regex for the value from response body to save to the context.
+
+Use ```${{ context.<name> }}``` to use context in further requests.
+
 ```json
 {
   "baseAddress": "https://dummyjson.com",
@@ -131,6 +139,9 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 ```
 
 ### Collection with Tags
+
+Tags are used to filter requests.
+
 ```json
 {
     "name": "Collection with Tags",
@@ -147,7 +158,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 }
 ```
 
-### Collection with http method
+### Collection with HTTP method
 ```json
 {
     "name": "Collection with http method",
@@ -197,6 +208,9 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 ```
 
 ### Collection with variables
+
+Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
+
 ```json
 {
     "name": "Collection with variables",
@@ -210,6 +224,9 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 ```
 
 ### Collection with secrets
+
+Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
+
 ```json
 {
     "name": "Collection with secrets",
@@ -228,6 +245,16 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 ```
 
 ### Collections with functions
+
+Use ```${{ func.<function name> }}``` to put a function result in the collection.
+
+#### Supported functions
+```text
+- ${{ func.utcnow() }} - Curent UTC datetime
+- ${{ func.random() }} - Random number
+- ${{ func.guid() }} - New guid
+```
+
 ```json
 {
   "name": "Collections with functions",
@@ -245,14 +272,9 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 }
 ```
 
-#### Functions
-```text
-- func.utcnow() - Curent UTC datetime
-- func.random() - Random number
-- func.guid() - New guid
-```
-
 ### Validators
+
+Use ```<validator name>:<validator value>``` to add a response validator.
 
 #### Validate Http Status Code
 ```json
@@ -332,6 +354,9 @@ docker run itbusina/apibee:latest -c "$(<collection.json)"
 ```
 
 ### Run collection from file. (option 2)
+
+If you would like to path to the file, make sure the path is visible in the docker image, in order to do that, mount a docker volume.
+
 ```shell
 docker run \
           -v ./:/app/data \
@@ -509,7 +534,7 @@ jobs:
 
 ### Run API tests before deployment
 ```yaml
-name: Run API tests before deployment
+name: Run tests before live deploy
 
 on:
   push:
