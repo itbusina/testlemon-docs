@@ -135,12 +135,12 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 {
     "name": "Collection with Tags",
     "baseAddress": "https://dummyjson.com",
-    "tags": [
-      "smoke",
-      "regression"
-    ],
     "requests": [
       {
+        "tags": [
+          "smoke",
+          "regression"
+        ],
         "path": "/users/1"
       }
     ]
@@ -245,7 +245,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 }
 ```
 
-#### Supported functions
+#### Functions
 ```text
 - func.utcnow() - Curent UTC datetime
 - func.random() - Random number
@@ -263,10 +263,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
     {
       "path": "/auth/login",
       "validators": [
-        {
-          "type": "statuscode",
-          "value": "403"
-        }
+        "statuscode:403"
       ]
     }
   ]
@@ -282,10 +279,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
     {
       "path": "/auth/login",
       "validators": [
-        {
-          "type": "body",
-          "value": "{\"id\":1,\"body\":\"This is some awesome thinking!\",\"postId\":100,\"user\":{\"id\":63,\"username\":\"eburras1q\"}}"
-        }
+        "body-equals:{\"id\":1,\"body\":\"This is some awesome thinking!\",\"postId\":100,\"user\":{\"id\":63,\"username\":\"eburras1q\"}}"
       ]
     }
   ]
@@ -301,10 +295,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
     {
       "path": "/auth/login",
       "validators": [
-        {
-          "type": "body-contains",
-          "value": "This is some awesome thinking!"
-        }
+        "body-contains:This is some awesome thinking!"
       ]
     }
   ]
