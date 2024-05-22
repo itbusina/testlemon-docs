@@ -302,6 +302,22 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 }
 ```
 
+#### Validate Response time
+```json
+{
+  "name": "Validate Http Body (Contains)",
+  "baseAddress": "https://dummyjson.com",
+  "requests": [
+    {
+      "path": "/auth/login",
+      "validators": [
+        "response-time:1000"
+      ]
+    }
+  ]
+}
+```
+
 
 ## Execution
 
