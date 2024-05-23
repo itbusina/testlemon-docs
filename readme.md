@@ -207,7 +207,9 @@ Tags are used to filter requests.
 }
 ```
 
-### Collection with variables
+### Collection parameterization
+
+#### Using variables
 
 Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
 
@@ -223,7 +225,7 @@ Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
 }
 ```
 
-### Collection with secrets
+#### Using secrets
 
 Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 
@@ -244,11 +246,11 @@ Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 }
 ```
 
-### Collections with functions
+#### Using functions
 
 Use ```${{ func.<function name> }}``` to put a function result in the collection.
 
-#### Supported functions
+##### Supported functions
 
 - ```${{ func.utcnow() }}``` - Returns curent UTC datetime.
 - ```${{ func.random() }}``` - Returns random number.
@@ -256,7 +258,7 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 - ```${{ ai.text() }}``` - Returns text from OpenAI API with 100 tokens.
 - ```${{ ai.text(50) }}``` - Returns text from OpenAI API with 50 max tokens.
 
-##### Basic functions
+###### Basic functions
 ```json
 {
   "name": "Collections with functions",
@@ -274,7 +276,7 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 }
 ```
 
-##### OpenAI functions
+###### OpenAI functions
 ```json
 {
   "name": "Collections with functions",
