@@ -2,7 +2,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee/)
 [![Docker Stars](https://img.shields.io/docker/stars/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee/)
 
-No-Code APIs testing tool with JSON configuration.
+No-Code APIs testing tool with JSON configuration. Runs in docker, powered by OpenAI.
 
 # Quick start
 Minimal steps to test you API.
@@ -252,7 +252,9 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 
 - ```${{ func.utcnow() }}``` - Returns curent UTC datetime.
 - ```${{ func.random() }}``` - Returns random number.
-- ```${{ func.guid() }}``` - Returns new GUID
+- ```${{ func.guid() }}``` - Returns new GUID.
+- ```${{ ai.text() }}``` - Returns text from OpenAI API with 100 tokens.
+- ```${{ ai.text(50) }}``` - Returns text from OpenAI API with 50 max tokens.
 
 
 ```json
@@ -267,6 +269,23 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
         "Content-Type: application/json"
       ],
       "body": "{\"body\":\"This makes all sense to me! Date: ${{ func.utcnow() }}, Guid: ${{ func.guid() }}\",\"postId\":${{ func.random() }},\"userId\":5}"
+    }
+  ]
+}
+```
+
+```json
+{
+  "name": "Collections with functions",
+  "baseAddress": "https://dummyjson.com",
+  "requests": [
+    {
+      "path": "/comments/add",
+      "method": "POST",
+      "headers": [
+        "Content-Type: application/json"
+      ],
+      "body": "{\"body\":\"${{ ai.text(50) }}\",\"postId\":1,\"userId\":5}"
     }
   ]
 }
