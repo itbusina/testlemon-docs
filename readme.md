@@ -5,7 +5,7 @@
 No-Code APIs testing tool with JSON configuration.
 
 # Quick start
-Here is 2 minimal steps to test you API.
+Minimal steps to test you API.
 
 ## Create a collection.json file with API requests to test.
 ```json
@@ -250,9 +250,9 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 
 #### Supported functions
 ```text
-- ${{ func.utcnow() }} - Curent UTC datetime
-- ${{ func.random() }} - Random number
-- ${{ func.guid() }} - New guid
+- ${{ func.utcnow() }} - Returns curent UTC datetime.
+- ${{ func.random() }} - Returns random number.
+- ${{ func.guid() }} - Returns new GUID
 ```
 
 ```json
@@ -275,6 +275,14 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 ### Validators
 
 Use ```<validator name>:<validator value>``` to add a response validator.
+
+#### Supported validators
+```text
+- "statuscode:<code>" - Validates the HTTP status code of the response.
+- "body-equals:<text>" - Validates that the response body exactly matches the provided ```text``` value.
+- "body-contains:<text>" - Validates if the response body contains the ```text``` value.
+- "response-time:<time>" - Validates that the response time is less than the ```time``` value in milliseconds.
+```
 
 #### Validate Http Status Code
 ```json
