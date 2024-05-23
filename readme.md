@@ -277,7 +277,8 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 Use ```"<validator name>:<value>"``` format to add a response validator.
 
 #### Supported validators
-- ```"statuscode:<code>"``` - Validates the HTTP status code of the response.
+- ```"is-successful:<bool>"``` - Validates if the HTTP response is successful or not. When ```bool``` value is ```true``` status code is checked to be in the range 200-299.
+- ```"status-code:<code>"``` - Validates the HTTP status code of the response.
 - ```"body-equals:<text>"``` - Validates that the response body exactly matches the provided ```text``` value.
 - ```"body-contains:<text>"``` - Validates if the response body contains the ```text``` value.
 - ```"response-time:<time>"``` - Validates that the response time is less than the ```time``` value in milliseconds.
