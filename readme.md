@@ -2,7 +2,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee/)
 [![Docker Stars](https://img.shields.io/docker/stars/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee/)
 
-No-Code APIs testing tool with JSON configuration. Runs in docker, powered by OpenAI.
+No-Code APIs testing tool with declarative JSON configuration. Runs in docker, powered by OpenAI.
 
 # Quick start
 Minimal steps to test you API.
