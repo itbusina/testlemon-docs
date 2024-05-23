@@ -256,7 +256,7 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 - ```${{ ai.text() }}``` - Returns text from OpenAI API with 100 tokens.
 - ```${{ ai.text(50) }}``` - Returns text from OpenAI API with 50 max tokens.
 
-
+##### Basic functions
 ```json
 {
   "name": "Collections with functions",
@@ -274,6 +274,7 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 }
 ```
 
+##### OpenAI functions
 ```json
 {
   "name": "Collections with functions",
