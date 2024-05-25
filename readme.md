@@ -25,7 +25,7 @@ docker run itbusina/apibee:latest -c "$(<collection.json)"
 
 ## Or run the example
 ```shell
-docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json
+docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/quick-start.json
 ```
 
 # Default settings
@@ -435,7 +435,7 @@ docker run \
 
 ### Run collection from URL.
 ```shell
-docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/apis.json
+docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/quick-start.json
 ```
 
 ### Run collection from URL with authorization and required http headers.

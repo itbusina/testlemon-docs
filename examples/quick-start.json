@@ -1,0 +1,21 @@
+{
+  "name": "Quick Start Collection",
+  "baseAddress": "https://dummyjson.com",
+  "requests": [
+    {
+      "path": "/users"
+    },
+    {
+      "path": "/users/1"
+    },
+    {
+      "path": "/products"
+    },
+    {
+      "path": "/products/1"
+    },
+    {
+      "path": "/todos"
+    }
+  ]
+}
