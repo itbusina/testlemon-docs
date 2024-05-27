@@ -1,6 +1,7 @@
 # Oficial ApiBee Docker Image
-[![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee/)
-[![Docker Stars](https://img.shields.io/docker/stars/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee/)
+![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)
+![Docker Stars](https://img.shields.io/docker/stars/itbusina/apibee)
+![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fapibee-cloud.azurewebsites.net%2Fapi%2FGetProjectBadge%3FclientId%3DClient1%26projectId%3Da994573e-cb87-4870-874c-06e8971dd8f4&label=Sample%20API%20project&cacheSeconds=0)
 
 No-Code APIs testing tool with declarative JSON configuration. Runs in docker, powered by OpenAI.
 
