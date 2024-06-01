@@ -13,7 +13,7 @@ Minimal steps to test you API.
 {
     "requests": [
       {
-        "path": "https://dummyjson.com/products"
+        "uri": "https://dummyjson.com/products"
       }
     ]
 }
@@ -45,7 +45,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
     "baseAddress": "https://dummyjson.com",
     "requests": [
       {
-        "path": "/users"
+        "uri": "/users"
       }
     ]
 }
@@ -56,7 +56,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 {
     "requests": [
       {
-        "path": "https://dummyjson.com/users"
+        "uri": "https://dummyjson.com/users"
       }
     ]
 }
@@ -68,10 +68,10 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
     "baseAddress": "https://dummyjson.com",
     "requests": [
       {
-        "path": "/users"
+        "uri": "/users"
       },
       {
-        "path": "https://google.com"
+        "uri": "https://google.com"
       }
     ]
 }
@@ -88,15 +88,15 @@ Use ```name``` and ```dependsOn``` request properties to create a dependency bet
     "requests": [
       {
         "name": "auth",
-        "path": "/auth/login",
+        "uri": "/auth/login",
       },
       {
         "dependsOn": "auth",
-        "path": "/users/1",
+        "uri": "/users/1",
       },
       {
         "dependsOn": "auth",
-        "path": "/products"
+        "uri": "/products"
       }
     ]
 }
@@ -114,7 +114,7 @@ Use ```${{ context.<name> }}``` to use context in further requests.
   "requests": [
     {
       "name": "auth",
-      "path": "/auth/login",
+      "uri": "/auth/login",
       "method": "POST",
       "headers": [
         "Content-Type: application/json"
@@ -130,7 +130,7 @@ Use ```${{ context.<name> }}``` to use context in further requests.
     },
     {
       "dependsOn": "auth",
-      "path": "/auth/me",
+      "uri": "/auth/me",
       "headers": [
         "Authorization: Bearer ${{ context.token }}"
       ]
@@ -153,7 +153,7 @@ Tags are used to filter requests.
           "smoke",
           "regression"
         ],
-        "path": "/users/1"
+        "uri": "/users/1"
       }
     ]
 }
@@ -166,7 +166,7 @@ Tags are used to filter requests.
     "baseAddress": "https://dummyjson.com",
     "requests": [
       {
-        "path": "/users/1",
+        "uri": "/users/1",
         "method": "DELETE"
       }
     ]
@@ -180,7 +180,7 @@ Tags are used to filter requests.
     "baseAddress": "https://dummyjson.com",
     "requests": [
       {
-        "path": "/users/1",
+        "uri": "/users/1",
         "headers": [
           "Content-Type: application/json"
         ]
@@ -196,13 +196,13 @@ Tags are used to filter requests.
     "baseAddress": "https://dummyjson.com",
     "requests": [
       {
-        "path": "/auth/login",
+        "uri": "/auth/login",
       },
       {
-        "path": "/users/1",
+        "uri": "/users/1",
       },
       {
-        "path": "/products"
+        "uri": "/products"
       }
     ]
 }
@@ -220,7 +220,7 @@ Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
     "baseAddress": "${{ vars.host }}",
     "requests": [
       {
-        "path": "/products"
+        "uri": "/products"
       }
     ]
 }
@@ -236,10 +236,10 @@ Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
     "baseAddress": "https://dummyjson.com",
     "requests": [
       {
-        "path": "/products"
+        "uri": "/products"
       },
       {
-        "path": "/auth/login",
+        "uri": "/auth/login",
         "method": "POST",
         "body": "{\"username\":\"${{ secrets.login }}\",\"password\":\"${{ secrets.password }}\"}"
       }
@@ -266,7 +266,7 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
   "baseAddress": "https://dummyjson.com",
   "requests": [
     {
-      "path": "/comments/add",
+      "uri": "/comments/add",
       "method": "POST",
       "headers": [
         "Content-Type: application/json"
@@ -284,7 +284,7 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
   "baseAddress": "https://dummyjson.com",
   "requests": [
     {
-      "path": "/comments/add",
+      "uri": "/comments/add",
       "method": "POST",
       "headers": [
         "Content-Type: application/json"
@@ -313,7 +313,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseAddress": "https://dummyjson.com",
   "requests": [
     {
-      "path": "/auth/login",
+      "uri": "/auth/login",
       "validators": [
         "statuscode:403"
       ]
@@ -329,7 +329,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseAddress": "https://dummyjson.com",
   "requests": [
     {
-      "path": "/auth/login",
+      "uri": "/auth/login",
       "validators": [
         "body-equals:{\"id\":1,\"body\":\"This is some awesome thinking!\",\"postId\":100,\"user\":{\"id\":63,\"username\":\"eburras1q\"}}"
       ]
@@ -345,7 +345,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseAddress": "https://dummyjson.com",
   "requests": [
     {
-      "path": "/auth/login",
+      "uri": "/auth/login",
       "validators": [
         "body-contains:This is some awesome thinking!"
       ]
@@ -361,7 +361,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseAddress": "https://dummyjson.com",
   "requests": [
     {
-      "path": "/auth/login",
+      "uri": "/auth/login",
       "validators": [
         "response-time:1000"
       ]
@@ -385,7 +385,7 @@ docker run itbusina/apibee:latest -c "$(<collection.json)"
 
 ### Run collection from file. (option 2)
 
-If you would like to path to the file, make sure the path is visible in the docker image, in order to do that, mount a docker volume.
+If you would like to set the path to the file, make sure the path is visible in the docker image, in order to do that, mount a docker volume.
 
 ```shell
 docker run \
@@ -409,7 +409,7 @@ $collection = @'
   "baseAddress": "https://dummyjson.com",
   "requests": [
     {
-      "path": "/users/1"
+      "uri": "/users/1"
     }
   ]
 }
