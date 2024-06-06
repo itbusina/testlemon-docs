@@ -5,7 +5,7 @@
 
 No-Code APIs testing tool with declarative JSON configuration. Runs in docker, powered by OpenAI.
 
-# APIBEE Console - Quick start
+# ApiBee Docker - Quick start
 Minimal steps to test you API.
 
 ## Create a collection.json file with API requests to test.
@@ -35,9 +35,7 @@ docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/
 - Request is considered successful if the response contains the successful status code.
 - When the directory is passed as a source, all files with ```*.json``` extension are read from this directory and all subdirectories.
 
-
-
-# APIBEE Cloud - Quick start
+# ApiBee Cloud - Quick start
 
 ## Create a project
 Login to Dashboard and create a new project.
