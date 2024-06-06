@@ -5,7 +5,7 @@
 
 No-Code APIs testing tool with declarative JSON configuration. Runs in docker, powered by OpenAI.
 
-# Quick start
+# APIBEE Console - Quick start
 Minimal steps to test you API.
 
 ## Create a collection.json file with API requests to test.
@@ -29,11 +29,42 @@ docker run itbusina/apibee:latest -c "$(<collection.json)"
 docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/quick-start.json
 ```
 
-# Default settings
+## Default settings
 - Requests are sent via HTTP using ```GET``` method, if not specified.
 - Requests are executed sequentially. Pass ```-p``` argument to execute in parallel.
 - Request is considered successful if the response contains the successful status code.
 - When the directory is passed as a source, all files with ```*.json``` extension are read from this directory and all subdirectories.
+
+
+
+# APIBEE Cloud - Quick start
+
+## Create a project
+Login to Dashboard and create a new project.
+```json
+{
+    "Name": "My API Test Project",
+    "Collection": "https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/quick-start.json",
+    "License": "",
+    "Headers":
+    [],
+    "Variables":
+    [
+        "host=https://host.com"
+    ],
+    "Secrets":
+    [],
+    "Tags":
+    [],
+    "Parallel": false,
+    "Repeats": 1,
+    "Delay": 0,
+    "Interval": 100000,
+    "Verbose": false,
+    "OpenAIApiKey": null,
+    "OpenAIModel": null
+}
+```
 
 # Documentation
 
