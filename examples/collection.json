@@ -39,7 +39,7 @@
         "headers": [
           "Content-Type: application/json"
         ],
-        "body": "{\"body\":\"${{ ai.text(50) }}\",\"postId\":1,\"userId\":${{ context.userId }}}"
+        "body": "{\"body\":\"${{ gpt-4o.text(50) }}\",\"postId\":1,\"userId\":${{ context.userId }}}"
       },
       {
         "name": "Example of using validators.",
