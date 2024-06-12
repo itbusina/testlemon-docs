@@ -3,7 +3,7 @@
 [![Docker Stars](https://img.shields.io/docker/stars/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee)
 [![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fapibee-cloud.azurewebsites.net%2Fapi%2FGetProjectBadge%3FclientId%3DClient1%26projectId%3D848bb8db-e58a-4fcb-873a-71d7f9006c89&label=Sample%20API%20project&cacheSeconds=0)](https://apibee-cloud.azurewebsites.net/api/GetProject?clientId=Client1&projectId=848bb8db-e58a-4fcb-873a-71d7f9006c89)
 
-No-Code APIs testing tool with declarative JSON configuration. Runs in docker, powered by OpenAI.
+APIs testing and analytics tool with declarative JSON configuration. Available in docker and cloud.
 
 # ApiBee Docker - Quick start
 Minimal steps to test you API.
@@ -60,7 +60,8 @@ Login to Dashboard and create a new project.
     "Interval": 100000,
     "Verbose": false,
     "OpenAIApiKey": null,
-    "OpenAIModel": null
+    "OpenAIEndpoint": null,
+    "OllamaEndpoint": null
 }
 ```
 
@@ -285,8 +286,8 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 - ```${{ func.utcnow() }}``` - Returns curent UTC datetime.
 - ```${{ func.random() }}``` - Returns random number.
 - ```${{ func.guid() }}``` - Returns new GUID.
-- ```${{ ai.text() }}``` - Returns text from OpenAI API with 100 tokens.
-- ```${{ ai.text(50) }}``` - Returns text from OpenAI API with 50 max tokens.
+- ```${{ gpt-4o.text() }}``` - Returns text from OpenAI API (GPT-4o) with 100 tokens.
+- ```${{ gemma:2b.text(50) }}``` - Returns text from Gemma:2b model Ollama API with 50 max tokens.
 
 ###### Basic functions
 ```json
@@ -306,7 +307,9 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 }
 ```
 
-###### OpenAI functions
+###### LLM functions
+Currently you can use any OpenAI models and gemma:2b model from Ollama.
+
 ```json
 {
   "name": "Collections with functions",
@@ -318,7 +321,23 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
       "headers": [
         "Content-Type: application/json"
       ],
-      "body": "{\"body\":\"${{ ai.text(50) }}\",\"postId\":1,\"userId\":5}"
+      "body": "{\"body\":\"${{ gpt-4o.text(50) }}\",\"postId\":1,\"userId\":5}"
+    },
+    {
+      "uri": "/comments/add",
+      "method": "POST",
+      "headers": [
+        "Content-Type: application/json"
+      ],
+      "body": "{\"body\":\"${{ gpt-4.text(50) }}\",\"postId\":1,\"userId\":5}"
+    },
+    {
+      "uri": "/comments/add",
+      "method": "POST",
+      "headers": [
+        "Content-Type: application/json"
+      ],
+      "body": "{\"body\":\"${{ gemma:2b.text(50) }}\",\"postId\":1,\"userId\":5}"
     }
   ]
 }
