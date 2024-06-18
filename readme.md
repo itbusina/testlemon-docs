@@ -45,23 +45,33 @@ Login to Dashboard and create a new project.
     "Collection": "https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/quick-start.json",
     "License": "",
     "Headers":
-    [],
+    [
+        "Authorization: Bearer ghp_dsa987dsad67d8s6a876d7as",
+        "User-Agent:ApiBee",
+        "Accept:application/vnd.github.raw+json"
+    ],
     "Variables":
     [
         "host=https://host.com"
     ],
     "Secrets":
-    [],
+    [
+        "login=admin",
+        "password=Welcome12345"
+    ],
     "Tags":
-    [],
+    [
+        "smoke",
+        "regression"
+    ],
     "Parallel": false,
     "Repeats": 1,
     "Delay": 0,
     "Interval": 100000,
-    "Verbose": false,
     "OpenAIApiKey": null,
     "OpenAIEndpoint": null,
-    "OllamaEndpoint": null
+    "OllamaEndpoint": "https://localhost:11434",
+    "OllamaTimeout": 600
 }
 ```
 
