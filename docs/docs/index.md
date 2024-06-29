@@ -18,7 +18,7 @@ APIs testing and analytics tool with declarative JSON configuration. Available i
 
 ## Applications
 
-### Docker
+### Docker image
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee)
 
@@ -35,12 +35,12 @@ APIs testing and analytics tool with declarative JSON configuration. Available i
 }
 ```
 
-##### Run the docker image
+##### Run docker image
 ```shell
 docker run itbusina/apibee:latest -c "$(<collection.json)"
 ```
 
-##### Run the example
+##### Run the example collection url
 ```shell
 docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/quick-start.json
 ```
@@ -198,7 +198,6 @@ docker run itbusina/apibee:latest \
             | tee output.json
 ```
 
-
 ### Cloud
 
 #### Create a project
@@ -229,11 +228,7 @@ Login to Dashboard and create a new project.
     "Parallel": false,
     "Repeats": 1,
     "Delay": 0,
-    "Interval": 100000,
-    "OpenAIApiKey": null,
-    "OpenAIEndpoint": null,
-    "OllamaEndpoint": "https://localhost:11434",
-    "OllamaTimeout": 600
+    "Interval": 100000
 }
 ```
 
@@ -590,15 +585,11 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 }
 ```
 
-
-
-
-
 ## Integrations
 
 ### GitHub
 
-#### Run tests in pipeline
+#### Run tests in pipeline using docker image
 ```yaml
 name: Simple tests
 
@@ -632,7 +623,7 @@ jobs:
 
 ```
 
-#### Use github actions
+#### Run tests in pipeline using github actions
 ```yaml
 name: Simple tests
 
