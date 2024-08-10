@@ -52,6 +52,54 @@
             "tags": [
                 "cataas"
             ]
+        },
+        {
+            "name": "Get random cat",
+            "uri": "https://cataas.com/cat",
+            "method": "GET",
+            "tags": [
+                "cataas"
+            ]
+        },
+        {
+            "name": "Get cat by id",
+            "uri": "https://cataas.com/cat/KqeTkj2hT6iNtPwD",
+            "method": "GET",
+            "tags": [
+                "cataas"
+            ]
+        },
+        {
+            "name": "Get cat by tag",
+            "uri": "https://cataas.com/cat/Bengal",
+            "method": "GET",
+            "tags": [
+                "cataas"
+            ]
+        },
+        {
+            "name": "Get cat with text",
+            "uri": "https://cataas.com/cat/says/hello",
+            "method": "GET",
+            "tags": [
+                "cataas"
+            ]
+        },
+        {
+            "name": "Get cat with text",
+            "uri": "https://cataas.com/cat/KqeTkj2hT6iNtPwD/says/miau",
+            "method": "GET",
+            "tags": [
+                "cataas"
+            ]
+        },
+        {
+            "name": "Get cat by tag with text",
+            "uri": "https://cataas.com/cat/Bengal/says/miau",
+            "method": "GET",
+            "tags": [
+                "cataas"
+            ]
         }
     ]
 }
