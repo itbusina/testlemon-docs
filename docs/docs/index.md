@@ -530,7 +530,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
     {
       "uri": "/auth/login",
       "validators": [
-        "statuscode:403"
+        "status-code:403"
       ]
     }
   ]
