@@ -8,4 +8,4 @@ APIs testing and analytics tool with declarative JSON configuration. Available i
 https://portal.apibee.itbusina.com
 
 ## Documentation
-See full documentaion here https://docs.apibee.itbusina.com
+https://docs.apibee.itbusina.com
