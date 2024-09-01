@@ -405,9 +405,7 @@ Tags are used to filter requests.
 }
 ```
 
-#### Collection parameterization
-
-##### Using variables
+#### Using variables in collection
 
 Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
 
@@ -423,7 +421,7 @@ Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
 }
 ```
 
-##### Using secrets
+#### Using secrets in collection
 
 Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 
