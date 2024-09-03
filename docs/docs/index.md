@@ -585,7 +585,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 
 ## Integrations
 
-### GitHub
+### GitHub Actions
 
 #### Run tests in pipeline using docker image
 ```yaml
@@ -695,7 +695,7 @@ jobs:
           mynewapi:${{ github.sha }}
         
     - name: Test Mock API 
-      uses: itbusina/apibee-action@v0.1.15-alpha
+      uses: itbusina/apibee-action@v0.1.16-alpha
       with:
           input_dir: ./test
           output_dir: ./output
