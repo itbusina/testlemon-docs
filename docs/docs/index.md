@@ -442,7 +442,7 @@ Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 }
 ```
 
-##### Using functions
+#### Using functions
 
 Use ```${{ func.<function name> }}``` to put a function result in the collection.
 
@@ -453,6 +453,8 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 - ```${{ func.guid() }}``` - Returns new GUID.
 - ```${{ gpt-4o.text() }}``` - Returns text from OpenAI API (GPT-4o) with 100 tokens.
 - ```${{ gemma:2b.text(50) }}``` - Returns text from Gemma:2b model Ollama API with 50 max tokens.
+
+Notes: make sure to specify the OpenAPI key and endpoint to use 'gpt-' function, and ollama endpoint to use 'ollama' functions.
 
 ###### Basic functions
 ```json
