@@ -520,6 +520,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 - ```"body-equals:<text>"``` - Validates that the response body exactly matches the provided ```text``` value.
 - ```"body-contains:<text>"``` - Validates if the response body contains the ```text``` value.
 - ```"response-time:<time>"``` - Validates that the response time is less than the ```time``` value in milliseconds.
+- ```"sentiment:<sentiment>"``` - Validates that the response body is in one of the following sentiments (```negative, neutral, positive```).
 
 #### Validate Http Status Code
 ```json
