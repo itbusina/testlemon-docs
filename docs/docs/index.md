@@ -586,6 +586,22 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 }
 ```
 
+#### Validate Response Body Sentiment
+```json
+{
+  "name": "Validate Sentiment",
+  "baseAddress": "https://dummyjson.com",
+  "requests": [
+    {
+      "uri": "/comments?limit=1&select=body",
+      "validators": [
+        "sentiment:positive"
+      ]
+    }
+  ]
+}
+```
+
 ## Integrations
 
 ### GitHub Actions
