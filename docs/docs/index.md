@@ -284,7 +284,7 @@ Use ```name``` and ```dependsOn``` request properties to create a dependency bet
     "baseAddress": "https://dummyjson.com",
     "requests": [
       {
-        "name": "auth",
+        "id": "auth",
         "uri": "/auth/login",
       },
       {
@@ -310,7 +310,7 @@ Use ```${{ context.<name> }}``` to use context in further requests.
   "baseAddress": "https://dummyjson.com",
   "requests": [
     {
-      "name": "auth",
+      "id": "auth",
       "uri": "/auth/login",
       "method": "POST",
       "headers": [
@@ -520,7 +520,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 - ```"body-equals:<text>"``` - Validates that the response body exactly matches the provided ```text``` value.
 - ```"body-contains:<text>"``` - Validates if the response body contains the ```text``` value.
 - ```"response-time:<time>"``` - Validates that the response time is less than the ```time``` value in milliseconds.
-- ```"sentiment:<sentiment>"``` - Validates that the response body is in one of the following sentiments (```negative, neutral, positive```).
+- ```"sentiment:<sentiment>"``` - AI validator to test the response body is in one of the following sentiments (```negative, neutral, positive```).
 
 #### Validate Http Status Code
 ```json
