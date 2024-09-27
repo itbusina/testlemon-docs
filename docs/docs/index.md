@@ -27,6 +27,8 @@ APIs testing and analytics tool with declarative JSON configuration. Available i
 #### Quick start
 
 ##### Create a collection file with API requests to test.
+
+JSON config
 ```json
 {
     "requests": [
@@ -37,6 +39,7 @@ APIs testing and analytics tool with declarative JSON configuration. Available i
 }
 ```
 
+YAML config
 ```yaml
 requests:
 - uri: https://dummyjson.com/products
@@ -285,6 +288,7 @@ Login to Dashboard and create a new project.
 
 Use ```name``` and ```dependsOn``` request properties to create a dependency between requests
 
+JSON config
 ```json
 {
     "name": "Collection with dependant requests",
@@ -306,6 +310,7 @@ Use ```name``` and ```dependsOn``` request properties to create a dependency bet
 }
 ```
 
+YAML config
 ```yaml
 name: Collection with dependant requests
 baseAddress: https://dummyjson.com
