@@ -4,17 +4,19 @@
 
 APIs testing and analytics tool with declarative JSON configuration. Available in docker and cloud.
 
-- Run from docker.
+- CLI tool in docker.
 - Integration with GitHub Actions.
-- Filtering API requests using tags.
+- Organise tests in suites using tags.
 - Collections can be specified using inline script, directory path, file path, public or secured url. Multiple sources are also supported.
 - Parallel/Sequential requests execution.
 - Variables, secrets and functions support inside the collection.
-- Support dependencies between requests.
+- Support tests chaining.
 - Support sharing context between requests.
 - Ability to execute collection multiple times.
 - Ability to specify the delay between runs.
 - Ability to execute collection in the loop with interval.
+- AI validation.
+- JSON and YAML configuration.
 
 ## Applications
 
@@ -24,7 +26,7 @@ APIs testing and analytics tool with declarative JSON configuration. Available i
 
 #### Quick start
 
-##### Create a collection.json file with API requests to test.
+##### Create a collection file with API requests to test.
 ```json
 {
     "requests": [
@@ -33,6 +35,11 @@ APIs testing and analytics tool with declarative JSON configuration. Available i
       }
     ]
 }
+```
+
+```yaml
+requests:
+- uri: https://dummyjson.com/products
 ```
 
 ##### Run docker image
@@ -285,11 +292,11 @@ Use ```name``` and ```dependsOn``` request properties to create a dependency bet
     "requests": [
       {
         "id": "auth",
-        "uri": "/auth/login",
+        "uri": "/auth/login"
       },
       {
         "dependsOn": "auth",
-        "uri": "/users/1",
+        "uri": "/users/1"
       },
       {
         "dependsOn": "auth",
@@ -297,6 +304,18 @@ Use ```name``` and ```dependsOn``` request properties to create a dependency bet
       }
     ]
 }
+```
+
+```yaml
+name: Collection with dependant requests
+baseAddress: https://dummyjson.com
+requests:
+- id: auth
+  uri: "/auth/login"
+- dependsOn: auth
+  uri: "/users/1"
+- dependsOn: auth
+  uri: "/products"
 ```
 
 #### Collection with sharing context between requests
