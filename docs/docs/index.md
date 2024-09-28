@@ -88,7 +88,7 @@ docker run itbusina/apibee:latest \
 $collection = @'
 {
   "name": "Dummy JSON collection 1",
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "uri": "/users/1"
@@ -249,7 +249,7 @@ Login to Dashboard and create a new project.
 #### Collection with base address
 ```json
 {
-    "baseAddress": "https://dummyjson.com",
+    "baseUrl": "https://dummyjson.com",
     "requests": [
       {
         "uri": "/users"
@@ -272,7 +272,7 @@ Login to Dashboard and create a new project.
 #### Collection with combination of base address and full url
 ```json
 {
-    "baseAddress": "https://dummyjson.com",
+    "baseUrl": "https://dummyjson.com",
     "requests": [
       {
         "uri": "/users"
@@ -292,7 +292,7 @@ JSON config
 ```json
 {
     "name": "Collection with dependant requests",
-    "baseAddress": "https://dummyjson.com",
+    "baseUrl": "https://dummyjson.com",
     "requests": [
       {
         "id": "auth",
@@ -313,7 +313,7 @@ JSON config
 YAML config
 ```yaml
 name: Collection with dependant requests
-baseAddress: https://dummyjson.com
+baseUrl: https://dummyjson.com
 requests:
 - id: auth
   uri: "/auth/login"
@@ -331,7 +331,7 @@ Use ```${{ context.<name> }}``` to use context in further requests.
 
 ```json
 {
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "id": "auth",
@@ -367,7 +367,7 @@ Tags are used to filter requests.
 ```json
 {
     "name": "Collection with Tags",
-    "baseAddress": "https://dummyjson.com",
+    "baseUrl": "https://dummyjson.com",
     "requests": [
       {
         "tags": [
@@ -384,7 +384,7 @@ Tags are used to filter requests.
 ```json
 {
     "name": "Collection with http method",
-    "baseAddress": "https://dummyjson.com",
+    "baseUrl": "https://dummyjson.com",
     "requests": [
       {
         "uri": "/users/1",
@@ -398,7 +398,7 @@ Tags are used to filter requests.
 ```json
 {
     "name": "Collection with http request headers",
-    "baseAddress": "https://dummyjson.com",
+    "baseUrl": "https://dummyjson.com",
     "requests": [
       {
         "uri": "/users/1",
@@ -414,7 +414,7 @@ Tags are used to filter requests.
 ```json
 {
     "name": "Collection with multiple API requests",
-    "baseAddress": "https://dummyjson.com",
+    "baseUrl": "https://dummyjson.com",
     "requests": [
       {
         "uri": "/auth/login",
@@ -436,7 +436,7 @@ Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
 ```json
 {
     "name": "Collection with variables",
-    "baseAddress": "${{ vars.host }}",
+    "baseUrl": "${{ vars.host }}",
     "requests": [
       {
         "uri": "/products"
@@ -452,7 +452,7 @@ Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 ```json
 {
     "name": "Collection with secrets",
-    "baseAddress": "https://dummyjson.com",
+    "baseUrl": "https://dummyjson.com",
     "requests": [
       {
         "uri": "/products"
@@ -484,7 +484,7 @@ Notes: make sure to specify the OpenAPI key and endpoint to use 'gpt-' function,
 ```json
 {
   "name": "Collections with functions",
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "uri": "/comments/add",
@@ -504,7 +504,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 ```json
 {
   "name": "Collections with functions",
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "uri": "/comments/add",
@@ -550,7 +550,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 ```json
 {
   "name": "Validate Http Status Code",
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "uri": "/auth/login",
@@ -566,7 +566,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 ```json
 {
   "name": "Validate Http Body (Full match)",
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "uri": "/auth/login",
@@ -582,7 +582,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 ```json
 {
   "name": "Validate Http Body (Contains)",
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "uri": "/auth/login",
@@ -598,7 +598,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 ```json
 {
   "name": "Validate Http Body (Contains)",
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "uri": "/auth/login",
@@ -614,7 +614,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
 ```json
 {
   "name": "Validate Sentiment",
-  "baseAddress": "https://dummyjson.com",
+  "baseUrl": "https://dummyjson.com",
   "requests": [
     {
       "uri": "/comments?limit=1&select=body",
