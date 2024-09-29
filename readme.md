@@ -1,11 +1,11 @@
-# Welcome to ApiBee
-APIs testing and analytics tool with declarative JSON configuration. Available in docker and cloud.
+# ApiBee official documentatioh
+ApiBee - Web monitoring and API test automation tool.
 
 ## Docker image
 [![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee)
 
-## Docker Cloud
+## Cloud App
 https://portal.apibee.itbusina.com
 
-## Documentation
+## Online documentation
 https://docs.apibee.itbusina.com
