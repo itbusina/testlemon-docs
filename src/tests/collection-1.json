@@ -1,0 +1,9 @@
+{
+  "name": "Simple test collection",
+  "baseAddress": "http://host.docker.internal:5295",
+  "requests": [
+    {
+      "uri": "/users"
+    }
+  ]
+}

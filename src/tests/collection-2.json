@@ -1,0 +1,21 @@
+{
+  "name": "Test collection with validators",
+  "baseAddress": "http://host.docker.internal:5295",
+  "requests": [
+    {
+      "uri": "/users",
+      "validators": [
+        "status-code:200",
+        "body-contains:id",
+        "body-contains:name",
+        "response-time:10000"
+      ]
+    },
+    {
+      "uri": "/users/-1",
+      "validators": [
+        "status-code:404"
+      ]
+    }
+  ]
+}

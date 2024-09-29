@@ -1,0 +1,61 @@
+name: Example how to run API tests before deployment
+
+on:
+  push:
+    paths:
+      - 'src/api/**'
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - name: Code checkout
+      uses: actions/checkout@v4
+
+    - name: Build Container Image
+      uses: docker/build-push-action@v5.3.0
+      with:
+        push: false
+        load: true
+        tags: mynewapi:${{ github.sha }}
+        file: ./src/api/Dockerfile
+
+    - name: Create Docker Network
+      run: docker network create vnet
+        
+    - name: Run API in docker
+      run: |
+        docker run -d \
+          -p 8080:8080 \
+          --name mynewapi \
+          --network vnet \
+          mynewapi:${{ github.sha }}
+        
+    - name: Test API before release
+      uses: itbusina/apibee-action@v0.1.16-alpha
+      with:
+          input_dir: ./tests
+          output_dir: ./output
+          network: container:mynewapi
+          args: |
+            --collections ./src/tests/collection-4.json \
+            --variables host=http://mynewapi:8080 \
+            --output output
+        
+    #- name: Build image and push
+    #  uses: docker/build-push-action@v5.3.0
+    #  with:
+    #    push: true
+    #    tags: |
+    #      index.docker.io/${{ vars.DOCKERUSERNAME }}/api:latest
+    #    file: ./src/api/Dockerfile
+
+    - name: Archive output results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: Tests report
+        path: ./output/

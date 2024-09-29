@@ -1,0 +1,57 @@
+{
+    "name": "Dummy Json Tests",
+    "baseUrl": "https://dummyjson.com",
+    "requests": [
+      {
+        "id": "auth",
+        "uri": "/auth/login",
+        "method": "POST",
+        "headers": [
+          "Content-Type: application/json"
+        ],
+        "body": "{\"username\":\"${{ secrets.login }}\",\"password\":\"${{ secrets.password }}\"}",
+        "context": [
+          {
+            "name": "userId",
+            "type": "variable",
+            "pattern": "\"id\":\\s*(\\d+)"
+          },
+          {
+            "name": "token",
+            "type": "secret",
+            "pattern": "\"token\":\\s*\"([^\"]+)\""
+          }
+        ]
+      },
+      {
+        "dependsOn":"auth",
+        "uri": "/auth/me",
+        "headers": [
+            "Authorization: Bearer ${{ context.token }}"
+        ]
+      },
+      {
+        "dependsOn": "auth",
+        "uri": "/comments/add",
+        "method": "POST",
+        "headers": [
+          "Content-Type: application/json"
+        ],
+        "body": "{\"body\":\"${{ gpt-4o.text(50) }}\",\"postId\":1,\"userId\":${{ context.userId }}}"
+      },
+      {
+        "uri": "/auth/login",
+        "validators": [
+          "status-code:403",
+          "response-time:1000"
+        ]
+      },
+      {
+        "uri": "/auth/login",
+        "tags": [
+          "smoke",
+          "regression"
+        ]
+      }
+    ]
+  }

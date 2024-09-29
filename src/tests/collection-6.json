@@ -1,0 +1,25 @@
+{
+  "name": "Test collection with context",
+  "baseAddress": "http://host.docker.internal:5295",
+  "requests": [
+    {
+      "name": "fetchUsers",
+      "uri": "/users",
+      "context": [
+        {
+          "name": "userId",
+          "type": "variable",
+          "pattern": "\"id\":\\s*(\\d+)/gm"
+        }
+      ]
+    },
+    {
+      "dependsOn": "fetchUsers",
+      "uri": "/users/${{ context.userId }}",
+      "validators": [
+        "status-code:200",
+        "body-contains:${{ context.userId }}"
+      ]
+    }
+  ]
+}
