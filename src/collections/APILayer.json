@@ -4,7 +4,7 @@
     "requests": [
         {
             "name": "Get facts.",
-            "uri": "https://cat-fact.herokuapp.com/facts",
+            "url": "https://cat-fact.herokuapp.com/facts",
             "method": "GET",
             "tags": [
                 "cat-fact"
@@ -12,7 +12,7 @@
         },
         {
             "name": "Get random facts.",
-            "uri": "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2",
+            "url": "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=2",
             "method": "GET",
             "tags": [
                 "cat-fact"
@@ -20,7 +20,7 @@
         },
         {
             "name": "Get fact by id.",
-            "uri": "https://cat-fact.herokuapp.com/facts/591f98803b90f7150a19c229",
+            "url": "https://cat-fact.herokuapp.com/facts/591f98803b90f7150a19c229",
             "method": "GET",
             "tags": [
                 "cat-fact"
@@ -28,7 +28,7 @@
         },
         {
             "name": "Get cats",
-            "uri": "https://cataas.com/api/cats",
+            "url": "https://cataas.com/api/cats",
             "method": "GET",
             "tags": [
                 "cataas"
@@ -36,7 +36,7 @@
         },
         {
             "name": "Get tags",
-            "uri": "https://cataas.com/api/tags",
+            "url": "https://cataas.com/api/tags",
             "method": "GET",
             "tags": [
                 "cataas"
@@ -47,7 +47,7 @@
         },
         {
             "name": "Get count",
-            "uri": "https://cataas.com/api/count",
+            "url": "https://cataas.com/api/count",
             "method": "GET",
             "tags": [
                 "cataas"
@@ -55,7 +55,7 @@
         },
         {
             "name": "Get random cat",
-            "uri": "https://cataas.com/cat",
+            "url": "https://cataas.com/cat",
             "method": "GET",
             "tags": [
                 "cataas"
@@ -63,7 +63,7 @@
         },
         {
             "name": "Get cat by id",
-            "uri": "https://cataas.com/cat/KqeTkj2hT6iNtPwD",
+            "url": "https://cataas.com/cat/KqeTkj2hT6iNtPwD",
             "method": "GET",
             "tags": [
                 "cataas"
@@ -71,7 +71,7 @@
         },
         {
             "name": "Get cat by tag",
-            "uri": "https://cataas.com/cat/Bengal",
+            "url": "https://cataas.com/cat/Bengal",
             "method": "GET",
             "tags": [
                 "cataas"
@@ -79,7 +79,7 @@
         },
         {
             "name": "Get cat with text",
-            "uri": "https://cataas.com/cat/says/hello",
+            "url": "https://cataas.com/cat/says/hello",
             "method": "GET",
             "tags": [
                 "cataas"
@@ -87,7 +87,7 @@
         },
         {
             "name": "Get cat with text",
-            "uri": "https://cataas.com/cat/KqeTkj2hT6iNtPwD/says/miau",
+            "url": "https://cataas.com/cat/KqeTkj2hT6iNtPwD/says/miau",
             "method": "GET",
             "tags": [
                 "cataas"
@@ -95,7 +95,7 @@
         },
         {
             "name": "Get cat by tag with text",
-            "uri": "https://cataas.com/cat/Bengal/says/miau",
+            "url": "https://cataas.com/cat/Bengal/says/miau",
             "method": "GET",
             "tags": [
                 "cataas"

@@ -1,7 +1,7 @@
 baseUrl: https://dummyjson.com
 requests:
 - name: Validate authentication with GET method
-  uri: "/auth/login"
+  url: "/auth/login"
   tags:
   - smoke
   - regression
@@ -9,7 +9,7 @@ requests:
   - is-successful:false
   - response-time:1000
 - name: Validate authentication with POST method
-  uri: "/auth/login"
+  url: "/auth/login"
   method: POST
   tags:
   - smoke
@@ -18,7 +18,7 @@ requests:
   - 'Content-Type: application/json'
   body: '{"username":"emilys","password":"emilyspass"}'
 - name: Update user's lastname by user id
-  uri: "/users/1"
+  url: "/users/1"
   method: PUT
   tags:
   - regression
@@ -26,7 +26,7 @@ requests:
   - 'Content-Type: application/json'
   body: '{"lastname":"Updated"}'
 - name: Get comment by id
-  uri: "/comments/1"
+  url: "/comments/1"
   tags:
   - regression
   validators:

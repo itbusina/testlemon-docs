@@ -33,7 +33,7 @@ JSON config
 {
     "requests": [
       {
-        "uri": "https://dummyjson.com/products"
+        "url": "https://dummyjson.com/products"
       }
     ]
 }
@@ -42,7 +42,7 @@ JSON config
 YAML config
 ```yaml
 requests:
-- uri: https://dummyjson.com/products
+- url: https://dummyjson.com/products
 ```
 
 ##### Run docker image
@@ -91,7 +91,7 @@ $collection = @'
   "baseUrl": "https://dummyjson.com",
   "requests": [
     {
-      "uri": "/users/1"
+      "url": "/users/1"
     }
   ]
 }
@@ -252,7 +252,7 @@ Login to Dashboard and create a new project.
     "baseUrl": "https://dummyjson.com",
     "requests": [
       {
-        "uri": "/users"
+        "url": "/users"
       }
     ]
 }
@@ -263,7 +263,7 @@ Login to Dashboard and create a new project.
 {
     "requests": [
       {
-        "uri": "https://dummyjson.com/users"
+        "url": "https://dummyjson.com/users"
       }
     ]
 }
@@ -275,10 +275,10 @@ Login to Dashboard and create a new project.
     "baseUrl": "https://dummyjson.com",
     "requests": [
       {
-        "uri": "/users"
+        "url": "/users"
       },
       {
-        "uri": "https://google.com"
+        "url": "https://google.com"
       }
     ]
 }
@@ -296,15 +296,15 @@ JSON config
     "requests": [
       {
         "id": "auth",
-        "uri": "/auth/login"
+        "url": "/auth/login"
       },
       {
         "dependsOn": "auth",
-        "uri": "/users/1"
+        "url": "/users/1"
       },
       {
         "dependsOn": "auth",
-        "uri": "/products"
+        "url": "/products"
       }
     ]
 }
@@ -316,11 +316,11 @@ name: Collection with dependant requests
 baseUrl: https://dummyjson.com
 requests:
 - id: auth
-  uri: "/auth/login"
+  url: "/auth/login"
 - dependsOn: auth
-  uri: "/users/1"
+  url: "/users/1"
 - dependsOn: auth
-  uri: "/products"
+  url: "/products"
 ```
 
 #### Collection with sharing context between requests
@@ -335,7 +335,7 @@ Use ```${{ context.<name> }}``` to use context in further requests.
   "requests": [
     {
       "id": "auth",
-      "uri": "/auth/login",
+      "url": "/auth/login",
       "method": "POST",
       "headers": [
         "Content-Type: application/json"
@@ -351,7 +351,7 @@ Use ```${{ context.<name> }}``` to use context in further requests.
     },
     {
       "dependsOn": "auth",
-      "uri": "/auth/me",
+      "url": "/auth/me",
       "headers": [
         "Authorization: Bearer ${{ context.token }}"
       ]
@@ -374,7 +374,7 @@ Tags are used to filter requests.
           "smoke",
           "regression"
         ],
-        "uri": "/users/1"
+        "url": "/users/1"
       }
     ]
 }
@@ -387,7 +387,7 @@ Tags are used to filter requests.
     "baseUrl": "https://dummyjson.com",
     "requests": [
       {
-        "uri": "/users/1",
+        "url": "/users/1",
         "method": "DELETE"
       }
     ]
@@ -401,7 +401,7 @@ Tags are used to filter requests.
     "baseUrl": "https://dummyjson.com",
     "requests": [
       {
-        "uri": "/users/1",
+        "url": "/users/1",
         "headers": [
           "Content-Type: application/json"
         ]
@@ -417,13 +417,13 @@ Tags are used to filter requests.
     "baseUrl": "https://dummyjson.com",
     "requests": [
       {
-        "uri": "/auth/login",
+        "url": "/auth/login",
       },
       {
-        "uri": "/users/1",
+        "url": "/users/1",
       },
       {
-        "uri": "/products"
+        "url": "/products"
       }
     ]
 }
@@ -439,7 +439,7 @@ Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
     "baseUrl": "${{ vars.host }}",
     "requests": [
       {
-        "uri": "/products"
+        "url": "/products"
       }
     ]
 }
@@ -455,10 +455,10 @@ Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
     "baseUrl": "https://dummyjson.com",
     "requests": [
       {
-        "uri": "/products"
+        "url": "/products"
       },
       {
-        "uri": "/auth/login",
+        "url": "/auth/login",
         "method": "POST",
         "body": "{\"username\":\"${{ secrets.login }}\",\"password\":\"${{ secrets.password }}\"}"
       }
@@ -487,7 +487,7 @@ Notes: make sure to specify the OpenAPI key and endpoint to use 'gpt-' function,
   "baseUrl": "https://dummyjson.com",
   "requests": [
     {
-      "uri": "/comments/add",
+      "url": "/comments/add",
       "method": "POST",
       "headers": [
         "Content-Type: application/json"
@@ -507,7 +507,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
   "baseUrl": "https://dummyjson.com",
   "requests": [
     {
-      "uri": "/comments/add",
+      "url": "/comments/add",
       "method": "POST",
       "headers": [
         "Content-Type: application/json"
@@ -515,7 +515,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
       "body": "{\"body\":\"${{ gpt-4o.text(50) }}\",\"postId\":1,\"userId\":5}"
     },
     {
-      "uri": "/comments/add",
+      "url": "/comments/add",
       "method": "POST",
       "headers": [
         "Content-Type: application/json"
@@ -523,7 +523,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
       "body": "{\"body\":\"${{ gpt-4.text(50) }}\",\"postId\":1,\"userId\":5}"
     },
     {
-      "uri": "/comments/add",
+      "url": "/comments/add",
       "method": "POST",
       "headers": [
         "Content-Type: application/json"
@@ -553,7 +553,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseUrl": "https://dummyjson.com",
   "requests": [
     {
-      "uri": "/auth/login",
+      "url": "/auth/login",
       "validators": [
         "status-code:403"
       ]
@@ -569,7 +569,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseUrl": "https://dummyjson.com",
   "requests": [
     {
-      "uri": "/auth/login",
+      "url": "/auth/login",
       "validators": [
         "body-equals:{\"id\":1,\"body\":\"This is some awesome thinking!\",\"postId\":100,\"user\":{\"id\":63,\"username\":\"eburras1q\"}}"
       ]
@@ -585,7 +585,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseUrl": "https://dummyjson.com",
   "requests": [
     {
-      "uri": "/auth/login",
+      "url": "/auth/login",
       "validators": [
         "body-contains:This is some awesome thinking!"
       ]
@@ -601,7 +601,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseUrl": "https://dummyjson.com",
   "requests": [
     {
-      "uri": "/auth/login",
+      "url": "/auth/login",
       "validators": [
         "response-time:1000"
       ]
@@ -617,7 +617,7 @@ Use ```"<validator name>:<value>"``` format to add a response validator.
   "baseUrl": "https://dummyjson.com",
   "requests": [
     {
-      "uri": "/comments?limit=1&select=body",
+      "url": "/comments?limit=1&select=body",
       "validators": [
         "sentiment:positive"
       ]

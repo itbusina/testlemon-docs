@@ -4,7 +4,7 @@
     "requests": [
       {
         "id": "auth",
-        "uri": "/auth/login",
+        "url": "/auth/login",
         "method": "POST",
         "headers": [
           "Content-Type: application/json"
@@ -25,14 +25,14 @@
       },
       {
         "dependsOn":"auth",
-        "uri": "/auth/me",
+        "url": "/auth/me",
         "headers": [
             "Authorization: Bearer ${{ context.token }}"
         ]
       },
       {
         "dependsOn": "auth",
-        "uri": "/comments/add",
+        "url": "/comments/add",
         "method": "POST",
         "headers": [
           "Content-Type: application/json"
@@ -40,14 +40,14 @@
         "body": "{\"body\":\"${{ gpt-4o.text(50) }}\",\"postId\":1,\"userId\":${{ context.userId }}}"
       },
       {
-        "uri": "/auth/login",
+        "url": "/auth/login",
         "validators": [
           "status-code:403",
           "response-time:1000"
         ]
       },
       {
-        "uri": "/auth/login",
+        "url": "/auth/login",
         "tags": [
           "smoke",
           "regression"

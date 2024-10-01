@@ -2,7 +2,7 @@
   "name": "Sentiment test collection",
   "requests": [
     {
-      "uri": "https://newsapi.org/v2/top-headlines?country=us&apiKey=4586b1b10d094371b2d7f6456b7b3e02&pageSize=1",
+      "url": "https://newsapi.org/v2/top-headlines?country=us&apiKey=4586b1b10d094371b2d7f6456b7b3e02&pageSize=1",
       "headers": [
         "User-Agent: portal.apibee.itbusina.com"
       ],

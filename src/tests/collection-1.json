@@ -3,7 +3,7 @@
   "baseAddress": "http://host.docker.internal:5295",
   "requests": [
     {
-      "uri": "/users"
+      "url": "/users"
     }
   ]
 }

@@ -3,10 +3,10 @@
   "baseAddress": "${{ secrets.host }}",
   "requests": [
     {
-      "uri": "/users"
+      "url": "/users"
     },
     {
-      "uri": "/users/-1",
+      "url": "/users/-1",
       "validators": [
         "status-code:404"
       ]

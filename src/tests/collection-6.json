@@ -4,7 +4,7 @@
   "requests": [
     {
       "name": "fetchUsers",
-      "uri": "/users",
+      "url": "/users",
       "context": [
         {
           "name": "userId",
@@ -15,7 +15,7 @@
     },
     {
       "dependsOn": "fetchUsers",
-      "uri": "/users/${{ context.userId }}",
+      "url": "/users/${{ context.userId }}",
       "validators": [
         "status-code:200",
         "body-contains:${{ context.userId }}"
