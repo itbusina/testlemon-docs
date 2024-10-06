@@ -3,31 +3,31 @@ requests:
 - name: Validate authentication with GET method
   url: "/auth/login"
   tags:
-  - smoke
-  - regression
+    - smoke
+    - regression
   validators:
-  - is-successful:false
-  - response-time:1000
+    - is-successful: false
+    - response-time: 1000
 - name: Validate authentication with POST method
   url: "/auth/login"
   method: POST
   tags:
-  - smoke
-  - regression
+    - smoke
+    - regression
   headers:
-  - 'Content-Type: application/json'
+    - 'Content-Type: application/json'
   body: '{"username":"emilys","password":"emilyspass"}'
 - name: Update user's lastname by user id
   url: "/users/1"
   method: PUT
   tags:
-  - regression
+    - regression
   headers:
-  - 'Content-Type: application/json'
+    - 'Content-Type: application/json'
   body: '{"lastname":"Updated"}'
 - name: Get comment by id
   url: "/comments/1"
   tags:
-  - regression
+    - regression
   validators:
-  - body-contains:This is some awesome thinking!
+    - body-contains: This is some awesome thinking!
