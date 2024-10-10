@@ -1,0 +1,8 @@
+name: Monitor All Website pages
+requests:
+- url: https://website.com/
+  validators:
+  - sitemap-each-body-contains: "keyword"       # True when All pages contain keyword
+  - sitemap-each-body-not-contains: "keyword"   # True when ALL pages do not contain keyword
+  - sitemap-any-body-contains: "keyword"        # True when at least one page contains keyword
+  - sitemap-any-body-not-contains: "keyword"    # True when at least one page does not contain keyword
