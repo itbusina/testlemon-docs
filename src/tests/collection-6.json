@@ -17,8 +17,8 @@
       "dependsOn": "fetchUsers",
       "url": "/users/${{ context.userId }}",
       "validators": [
-        "status-code:200",
-        "body-contains:${{ context.userId }}"
+        { "status-code": "200" },
+        { "body-contains": "${{ context.userId }}" }
       ]
     }
   ]
