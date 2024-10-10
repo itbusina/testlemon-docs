@@ -7,7 +7,9 @@
         "User-Agent: portal.apibee.itbusina.com"
       ],
       "validators": [
-          "sentiment:neutral"
+        {
+          "sentiment": "neutral"
+        }
       ]
     }
   ]
