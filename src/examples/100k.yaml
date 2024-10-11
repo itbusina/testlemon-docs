@@ -1,4 +1,7 @@
-- url: /health
+name: Testing 1 mln requests
+baseUrl: ${{ vars.host }}
+requests:
+  - url: /health
   - url: /users
   - url: /users
   - url: /products
