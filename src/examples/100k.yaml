@@ -1,4 +1,4 @@
-name: Testing 1 mln requests
+name: Testing 100k requests
 baseUrl: ${{ vars.host }}
 requests:
   - url: /health
