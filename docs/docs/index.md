@@ -3,10 +3,10 @@
 ## Overview
 Web monitoring and APIs test automation platform.
 
-## SaaS App
+### SaaS App
 [ApiBee Portal]([/guides/content/editing-an-existing-page](https://portal.apibee.itbusina.com/))
 
-## Docker CLI
+### Docker CLI
 [![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee)
 
 ### Features
@@ -38,7 +38,7 @@ Web monitoring and APIs test automation platform.
   
 ### Quick start
 
-##### Create a collection file with API requests to test.
+#### Create a collection file with API requests to test.
 
 JSON config
 ```json
@@ -57,12 +57,12 @@ requests:
 - url: https://dummyjson.com/products
 ```
 
-##### Run docker image
+#### Run docker image
 ```shell
 docker run itbusina/apibee:latest -c "$(<collection.json)"
 ```
 
-##### Run the example collection url
+#### Run the example collection url
 ```shell
 docker run itbusina/apibee:latest -c https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/quick-start.json
 ```
@@ -218,40 +218,6 @@ docker run itbusina/apibee:latest \
             -c "$(<collection.json)" \
             --verbose \
             | tee output.json
-```
-
-### Cloud
-
-#### Create a project
-Login to Dashboard and create a new project.
-```json
-{
-    "Name": "My API Test Project",
-    "Collection": "https://raw.githubusercontent.com/itbusina/apibee-public/main/examples/quick-start.json",
-    "License": "",
-    "Headers":
-    [
-        "Authorization: Bearer ghp_dsa987dsad67d8s6a876d7as",
-        "User-Agent:ApiBee",
-        "Accept:application/vnd.github.raw+json"
-    ],
-    "Variables":
-    [
-        "host=https://host.com"
-    ],
-    "Secrets":
-    [
-        "login=admin", "password=Welcome12345"
-    ],
-    "Tags":
-    [
-        "smoke", "regression"
-    ],
-    "Parallel": false,
-    "Repeats": 1,
-    "Delay": 0,
-    "Interval": 100000
-}
 ```
 
 ## Configurations
