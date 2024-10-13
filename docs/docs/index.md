@@ -543,18 +543,18 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 
 | Validator Name                                       | Description |
 | --------                                             | -------     |
-| is-successful: true&#124;false                       | Validates if the HTTP response is successful or not. When ```bool``` value is ```true``` status code is checked to be in the range 200-299.|
-| status-code: 200&#124;301&#124;404                   | Validates the HTTP status code of the response.|
+| is-successful: true &#124; false                       | Validates if the HTTP response is successful or not. When ```bool``` value is ```true``` status code is checked to be in the range 200-299.|
+| status-code: 200 &#124; 301 &#124; 404                   | Validates the HTTP status code of the response.|
 | body-equals: keyword                                 | Validates that the response body exactly matches the provided ```keyword``` value. |
 | body-not-equals: keyword                             | Validates that the response body does not matche the provided ```keyword``` value. |
 | body-contains: keyword                               | Validates if the response body contains the ```text``` value.|
 | response-time: number                                | Validates that the response time is less than the ```time``` value in milliseconds.|
-| sentiment: negative&#124;neutral&#124;positive       | Validates that the response time is less than the ```time``` value in milliseconds.|
-| dns-dkim-exists: true&#124;false                     | Validates that the DNS has DKIM record.|
-| dns-dmarc-exists: true&#124;false                    | Validates that the DNS has DMARC record.|
-| dns-spf-exists: true&#124;false                      | Validates that the DNS has SPF record.|
-| dns-dmarc-single-record: true&#124;false             | Validates that the DNS has only one DMARC record.|
-| dns-dmarc-strict-policy: true&#124;false             | Validates that the DNS has DMARC policy set to ```reject``` or ```quarantine```.|
+| sentiment: negative &#124; neutral &#124; positive       | Validates that the response time is less than the ```time``` value in milliseconds.|
+| dns-dkim-exists: true &#124; false                     | Validates that the DNS has DKIM record.|
+| dns-dmarc-exists: true &#124; false                    | Validates that the DNS has DMARC record.|
+| dns-spf-exists: true &#124; false                      | Validates that the DNS has SPF record.|
+| dns-dmarc-single-record: true &#124; false             | Validates that the DNS has only one DMARC record.|
+| dns-dmarc-strict-policy: true &#124; false             | Validates that the DNS has DMARC policy set to ```reject``` or ```quarantine```.|
 | dns-record-exists: TXT:name:value                    | Validates that the DNS has ```TXT``` record with ```name``` and ```value```.|
 | prompt: gpt-4o:keyword                               | Validates that the response body text is ```keyword``` using ```gpt-4o``` LLM model.|
 | sitemap-any-body-contains: keyword                   | Validates that any page from all pages in sitemap contain ```keyword``` in the body.|
