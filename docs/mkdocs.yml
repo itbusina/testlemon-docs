@@ -3,4 +3,4 @@ site_url: https://docs.apibee.itbusina.com/
 theme:
   name: readthedocs
 extra_css:
-  - css/extra.css
+  - extra.css
