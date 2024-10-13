@@ -466,11 +466,11 @@ Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 }
 ```
 
-#### Functions
+### Functions
 
 Use ```${{ func.<function name> }}``` to put a function result in the collection.
 
-##### All Supported functions
+#### All Supported functions
 
 | Function Name                | Description |
 | --------                     | -------     |
@@ -481,9 +481,9 @@ Use ```${{ func.<function name> }}``` to put a function result in the collection
 
 Notes: make sure to specify the OpenAPI key and endpoint to use 'gpt-' function.
 
-##### Function examples
+#### Function examples
 
-###### Basic functions
+##### Basic functions
 ```json
 {
   "name": "Collections with functions",
@@ -501,7 +501,7 @@ Notes: make sure to specify the OpenAPI key and endpoint to use 'gpt-' function.
 }
 ```
 
-###### LLM functions
+##### LLM functions
 Currently you can use any OpenAI models and gemma:2b model from Ollama.
 
 ```json
