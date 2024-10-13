@@ -4,19 +4,30 @@
 
 APIs testing and analytics tool with declarative JSON configuration. Available in docker and cloud.
 
-- CLI tool in docker.
-- Integration with GitHub Actions.
-- Organise tests in suites using tags.
-- Collections can be specified using inline script, directory path, file path, public or secured url. Multiple sources are also supported.
-- Parallel/Sequential requests execution.
-- Variables, secrets and functions support inside the collection.
-- Support tests chaining.
-- Support sharing context between requests.
-- Ability to execute collection multiple times.
-- Ability to specify the delay between runs.
-- Ability to execute collection in the loop with interval.
-- AI validation.
-- JSON and YAML configuration.
+- Web uptime monitoring
+- SSL monitoring
+- Domain monitoring
+- DNS monitoring
+- API test automation
+- Functional testing
+- Sentiment validation
+- AI assertions
+- Sitemap validators
+- GitHub Actions Integration
+- Email notifications
+- Slack notifications 
+- YAML & JSON configs
+- Secrets and variables
+- Tests dependencies
+- SaaS App
+- SaaS APIs
+- CLI tool
+- Available in docker
+- Maintenance window
+- Status page
+- Project badges
+- Tagging for tests suites
+- Online documentation
 
 ## Applications
 
