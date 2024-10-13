@@ -466,19 +466,22 @@ Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 }
 ```
 
-#### Using functions
+#### Functions
 
 Use ```${{ func.<function name> }}``` to put a function result in the collection.
 
-###### Supported functions
+##### All Supported functions
 
-- ```${{ func.utcnow() }}``` - Returns curent UTC datetime.
-- ```${{ func.random() }}``` - Returns random number.
-- ```${{ func.guid() }}``` - Returns new GUID.
-- ```${{ gpt-4o.text() }}``` - Returns text from OpenAI API (GPT-4o) with 100 tokens.
-- ```${{ gemma:2b.text(50) }}``` - Returns text from Gemma:2b model Ollama API with 50 max tokens.
+| Function Name                | Description |
+| --------                     | -------     |
+| ```${{ func.utcnow() }}```   | Returns curent UTC datetime.|
+| ```${{ func.random() }}```   | Returns random number.|
+| ```${{ func.guid() }}```     | Returns new GUID.|
+| ```${{ gpt-4o.text(100) }}```| Returns text from OpenAI API (GPT-4o) with ```100``` tokens.|
 
-Notes: make sure to specify the OpenAPI key and endpoint to use 'gpt-' function, and ollama endpoint to use 'ollama' functions.
+Notes: make sure to specify the OpenAPI key and endpoint to use 'gpt-' function.
+
+##### Function examples
 
 ###### Basic functions
 ```json
@@ -536,6 +539,8 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 
 ### Validators
 
+#### All supported validators
+
 | Validator Name                                       | Description |
 | --------                                             | -------     |
 | is-successful: true&#124;false                       | Validates if the HTTP response is successful or not. When ```bool``` value is ```true``` status code is checked to be in the range 200-299.|
@@ -562,7 +567,9 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 | domain-expiration-before: 30d                        | Validates that domain name expiration date before ```30``` days from now.|
 | domain-expiration-before: 30d                        | Validates that domain name expiration date before ```30``` days from now.|
 
-#### Validate Http Status Code
+#### Validators examples
+
+##### Validate Http Status Code
 ```json
 {
   "name": "Validate Http Status Code",
@@ -578,7 +585,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 }
 ```
 
-#### Validate Http Body (Full match)
+##### Validate Http Body (Full match)
 ```json
 {
   "name": "Validate Http Body (Full match)",
@@ -594,7 +601,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 }
 ```
 
-#### Validate Http Body (Contains)
+##### Validate Http Body (Contains)
 ```json
 {
   "name": "Validate Http Body (Contains)",
@@ -610,7 +617,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 }
 ```
 
-#### Validate Response time
+##### Validate Response time
 ```json
 {
   "name": "Validate Http Body (Contains)",
@@ -626,7 +633,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 }
 ```
 
-#### Validate Response Body Sentiment
+##### Validate Response Body Sentiment
 ```json
 {
   "name": "Validate Sentiment",
