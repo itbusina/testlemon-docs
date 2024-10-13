@@ -558,7 +558,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
     {
       "url": "/auth/login",
       "validators": [
-        "status-code:403"
+        { "status-code": "403" }
       ]
     }
   ]
@@ -574,7 +574,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
     {
       "url": "/auth/login",
       "validators": [
-        "body-equals:{\"id\":1,\"body\":\"This is some awesome thinking!\",\"postId\":100,\"user\":{\"id\":63,\"username\":\"eburras1q\"}}"
+        { "body-equals": "{\"id\":1,\"body\":\"This is some awesome thinking!\",\"postId\":100,\"user\":{\"id\":63,\"username\":\"eburras1q\"}}" }
       ]
     }
   ]
@@ -590,7 +590,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
     {
       "url": "/auth/login",
       "validators": [
-        "body-contains:This is some awesome thinking!"
+        { "body-contains": "This is some awesome thinking!" }
       ]
     }
   ]
@@ -606,7 +606,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
     {
       "url": "/auth/login",
       "validators": [
-        "response-time:1000"
+        { "response-time": "1000" }
       ]
     }
   ]
@@ -622,7 +622,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
     {
       "url": "/comments?limit=1&select=body",
       "validators": [
-        "sentiment:positive"
+        { "sentiment": "positive" }
       ]
     }
   ]
