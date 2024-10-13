@@ -1,0 +1,17 @@
+/* Make the main content full width */
+.md-content {
+    max-width: 100% !important; /* Allow content to fill the width */
+    padding-left: 0 !important; /* Remove padding on the left */
+    padding-right: 0 !important; /* Remove padding on the right */
+}
+
+/* Optional: Adjust the header and footer */
+.md-header,
+.md-footer {
+    max-width: 100% !important; /* Allow header/footer to fill the width */
+}
+
+/* Optional: Adjust the side navigation */
+.md-sidebar {
+    max-width: 250px; /* Adjust sidebar width as needed */
+}
