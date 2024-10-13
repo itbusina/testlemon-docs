@@ -6,6 +6,8 @@ Web monitoring and APIs test automation platform.
 ### SaaS App
 [ApiBee Portal]([/guides/content/editing-an-existing-page](https://portal.apibee.itbusina.com/))
 
+![Alt text](https://raw.githubusercontent.com/itbusina/apibee-docs/40c20396a038fe0dd5d86933c03a643554d1d21e/docs/docs/images/dashboard-black-3.png "a title")
+
 ### Docker CLI
 [![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee)
 
