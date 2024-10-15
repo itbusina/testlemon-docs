@@ -5,7 +5,7 @@ ApiBee - Web monitoring and API test automation tool. This repository caontains 
 [![Docker Pulls](https://img.shields.io/docker/pulls/itbusina/apibee)](https://hub.docker.com/r/itbusina/apibee)
 
 ## Cloud App
-https://portal.apibee.itbusina.com
+https://apibee.app
 
 ## Online documentation
 https://docs.apibee.itbusina.com
