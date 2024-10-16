@@ -531,8 +531,8 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 | response-time: number                                | Validates that the response time is less than the ```time``` value in milliseconds.|
 | sentiment: negative &#124; neutral &#124; positive       | Validates that the response time is less than the ```time``` value in milliseconds.|
 | dns-dkim-exists: true &#124; false                     | Validates that the DNS has DKIM record.|
-| dns-dmarc-exists: true &#124; false                    | Validates that the DNS has DMARC record.|
 | dns-spf-exists: true &#124; false                      | Validates that the DNS has SPF record.|
+| dns-dmarc-exists: true &#124; false                    | Validates that the DNS has DMARC record.|
 | dns-dmarc-single-record: true &#124; false             | Validates that the DNS has only one DMARC record.|
 | dns-dmarc-strict-policy: true &#124; false             | Validates that the DNS has DMARC policy set to ```reject``` or ```quarantine```.|
 | dns-record-exists: TXT:name:value                    | Validates that the DNS has ```TXT``` record with ```name``` and ```value```.|
@@ -546,6 +546,7 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 | domain-expiration-after: 30d                         | Validates that domain name expiration date after ```30``` days from now.|
 | domain-expiration-before: 30d                        | Validates that domain name expiration date before ```30``` days from now.|
 | domain-expiration-before: 30d                        | Validates that domain name expiration date before ```30``` days from now.|
+| tls-version: Tls12 &#124; Tls13                      | Validates that the connection can be established using ```Tls12``` or ```Tls13``` TLS version protocol.|
 
 #### Validators examples
 
