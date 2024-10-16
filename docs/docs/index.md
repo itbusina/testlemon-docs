@@ -546,7 +546,8 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 | domain-expiration-after: 30d                         | Validates that domain name expiration date after ```30``` days from now.|
 | domain-expiration-before: 30d                        | Validates that domain name expiration date before ```30``` days from now.|
 | domain-expiration-before: 30d                        | Validates that domain name expiration date before ```30``` days from now.|
-| tls-version: Tls12 &#124; Tls13                      | Validates that the connection can be established using ```Tls12``` or ```Tls13``` TLS version protocol.|
+| tls-version-equals: Tls12 &#124; Tls13               | Validates that the connection can be established using ```Tls12``` or ```Tls13``` TLS version protocol.|
+| tls-version-not-equals: Tls12 &#124; Tls13           | Validates that the connection can not be established using ```Tls12``` or ```Tls13``` TLS version protocol.|
 
 #### Validators examples
 
