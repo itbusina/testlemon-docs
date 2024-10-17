@@ -1,5 +1,5 @@
 site_name: APIBEE Documentation
-site_url: https://docs.apibee.itbusina.com/
+site_url: https://docs.apibee.app/
 theme:
   name: readthedocs
 extra_css: [css/extra.css]
