@@ -1,0 +1,12 @@
+name: Dependencies example
+baseUrl: https://dummyjson.com
+requests:
+- name: Get all users
+  url: /users
+  validators:
+  - status-code: 200
+- name: Get user by id
+  url: /users/1
+  validators:
+  - status-code: 200
+  - body-contains: "Emily"
