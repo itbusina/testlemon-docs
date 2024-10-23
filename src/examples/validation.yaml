@@ -1,4 +1,4 @@
-name: Dependencies example
+name: Test collection example
 baseUrl: https://dummyjson.com
 requests:
 - name: Get all users
