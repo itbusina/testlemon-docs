@@ -4,7 +4,7 @@
 Web monitoring and APIs test automation platform.
 
 ### SaaS App
-[TestLemon Portal]([/guides/content/editing-an-existing-page](https://app.testlemon.com/))
+[Test Lemon Portal](https://app.testlemon.com)
 
 ![Alt text](https://raw.githubusercontent.com/itbusina/testlemon-docs/40c20396a038fe0dd5d86933c03a643554d1d21e/docs/docs/images/hero-black.png "Image showing a screenshot from TestLemon dashboard")
 
