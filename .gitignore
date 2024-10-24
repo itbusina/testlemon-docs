@@ -2,3 +2,4 @@ docs/site/*
 src/api/bin/*
 src/api/obj/*
 *.Development.*
+**/*.DS_Store
