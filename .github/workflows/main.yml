@@ -35,7 +35,7 @@ jobs:
           mynewapi:${{ github.sha }}
         
     - name: Test API before release
-      uses: itbusina/apibee-action@v0.1.16-alpha
+      uses: itbusina/testlemon-action@v0.2
       with:
           input_dir: ./tests
           output_dir: ./output
