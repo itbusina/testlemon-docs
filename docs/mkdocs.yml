@@ -1,5 +1,5 @@
-site_name: APIBEE Documentation
-site_url: https://docs.apibee.app/
+site_name: TestLemon Documentation
+site_url: https://docs.testlemon.com/
 theme:
   name: readthedocs
 extra_css: [css/extra.css]
