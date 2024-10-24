@@ -1,5 +1,5 @@
 # Terms of Use
-_Last updated: May 25, 2024_
+_Last updated: October 24, 2024_
 
 ## 1. Introduction
 These User Terms of Use ("Terms") are between you ("you") and IT Busina Kiryl Bahdanovich (the "ITBUSINA" or "Company", "we", "us", "our") and govern your use of all versions of the TestLemon software, including the TestLemon docker images (collectively, the "Product"), the TestLemon websites, including but not limited to https://testlemon.com (the "Website") and https://app.testlemon.com (the "Platform", or "Tool", or "App").
