@@ -1,9 +1,9 @@
 # Privacy Policy
-_Last updated: May 25, 2024_
+_Last updated: October 24, 2024_
 
 ## Introduction
 
-Welcome to IT Busina Kiryl Bahdanovich (the "Company", or "we"). We are committed to protecting your privacy. This Privacy Policy explains how our ApiBee software (the "Service") and the https://apibee.itbusina.com (the "Website") collects, uses, discloses, and safeguards your information when you use them. By using the Service or the Website, you agree to the terms of this Privacy Policy.
+Welcome to TestLemon (the "Product"), developed by IT Busina Kiryl Bahdanovich (the "Company", or "we"). We are committed to protecting your privacy. This Privacy Policy explains how our TestLemon and the https://testlemon.com (the "Website") and https://app.testlemon.com (the "Platform", or "Tool", "App") collects, uses, discloses, and safeguards your information when you use them. By using the Service or the Website, you agree to the terms of this Privacy Policy.
 
 ## Information We Collect
 We may collect and process the following types of information:
