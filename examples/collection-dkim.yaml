@@ -1,0 +1,5 @@
+name: DKIM tests
+requests:
+- url: https://website.com
+  validators:
+  - dns-dkim-exists: true

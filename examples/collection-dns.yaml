@@ -1,0 +1,8 @@
+name: DNS tests
+requests:
+- url: https://website.com
+  validators:
+  - dns-record-exists: "A:@:55.55.55.55"
+  - dns-record-exists: "NS:@:xxx.domaincontrol.com."
+  - dns-record-exists: "TXT:_github-pages-challenge-xxxx"
+  - dns-record-exists: "CNAME:xxx.azurewebsites.net."

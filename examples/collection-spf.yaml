@@ -1,0 +1,5 @@
+name: SPF tests
+requests:
+- url: https://website.com
+  validators:
+  - dns-spf-exists: true

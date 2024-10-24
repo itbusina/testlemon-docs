@@ -1,8 +1,0 @@
-name: Collections with AI function
-baseUrl: https://dummyjson.com
-requests:
-  - url: /comments/add
-    method: POST
-    headers:
-      - "Content-Type: application/json"
-    body: '{"body":"${{ gpt-4o.text(50) }}","postId":1,"userId":5}'
