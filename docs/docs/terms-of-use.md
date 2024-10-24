@@ -55,4 +55,4 @@ The Terms, including the Privacy Policy, constitute the entire agreement between
 The Privacy Policy describes the ways we collect, use, store and disclose your personal information. You agree to the collection, use, storage, and disclosure of your data in accordance with the Privacy Policy.
 
 ## 12. Contact Information
-If you have any questions about these Terms, please contact us at contact@itbusina.com.
+If you have any questions about these Terms, please contact us by email at contact@testlemon.com or contact@itbusina.com.
