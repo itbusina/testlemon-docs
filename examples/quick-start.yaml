@@ -1,6 +1,6 @@
 name: Quick Start Collection
 baseUrl: https://dummyjson.com
-requests:
+tests:
   - url: /users
   - url: /users/1
   - url: /products
