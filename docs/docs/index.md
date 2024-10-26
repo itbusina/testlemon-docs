@@ -84,17 +84,12 @@ docker run itbusina/testlemon:latest -c "$(<collection.json)"
 If you would like to set the path to the file, make sure the path is visible in the docker image, in order to do that, mount a docker volume.
 
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/testlemon:latest \
-            -c data/collection.json
+docker run -v ./:/app/data itbusina/testlemon:latest -c data/collection.json
 ```
 
 #### Specify the license
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -l $license
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -l $license
 ```
 
 #### Run collection inline.
