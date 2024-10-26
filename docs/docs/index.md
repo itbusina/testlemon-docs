@@ -67,6 +67,7 @@ docker run itbusina/testlemon:latest -c "$(<collection.json)"
 #### Run the example collection url
 ```shell
 docker run itbusina/testlemon:latest -c https://raw.githubusercontent.com/itbusina/testlemon-docs/refs/heads/main/examples/quick-start.yaml
+```
 
 #### Display help
 ```shell
@@ -110,18 +111,12 @@ docker run itbusina/testlemon:latest -c $collection
 
 #### Run collections from multiple files
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/testlemon:latest \
-            -c data/collection1.json data/collection2.json
+docker run -v ./:/app/data itbusina/testlemon:latest -c data/collection1.json data/collection2.json
 ```
 
 #### Run collections from directory
 ```shell
-docker run \
-          -v ./:/app/data \
-          itbusina/testlemon:latest \
-            -c data/
+docker run -v ./:/app/data itbusina/testlemon:latest -c data/
 ```
 
 #### Run collection from URL.
@@ -131,89 +126,62 @@ docker run itbusina/testlemon:latest -c https://raw.githubusercontent.com/itbusi
 
 #### Run collection from URL with authorization and required http headers.
 ```shell
-docker run itbusina/testlemon:latest \
-            -c https://api.github.com/repos/user/repo/contents/data/collection.json \
-            -h "Authorization: Bearer ghp_dsaxxxxxxyyyyyyyzzzzz" "User-Agent:testlemon" "Accept:application/vnd.github.raw+json"
+docker run itbusina/testlemon:latest -c https://api.github.com/repos/user/repo/contents/data/collection.json -h "Authorization: Bearer ghp_dsaxxxxxxyyyyyyyzzzzz" "User-Agent:testlemon" "Accept:application/vnd.github.raw+json"
 ```
 
 #### Run collection in parallel
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -p
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -p
 ```
 
 #### Run collection with multiple tags filter
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -t smoke regression
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -t smoke regression
 ```
 
 #### Save report to output folder
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -o output
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output
 ```
 
 #### Pass variables in collection
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -v host=https://dummyjson.com
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -v host=https://dummyjson.com
 ```
 
 #### Pass secrets in collection
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -s login=admin,password=Welcome1!
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -s login=admin,password=Welcome1!
 ```
 
 #### Run collection 'N' times
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -r 5
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -r 5
 ```
 
 #### Run collection 'N' times with 1s delay
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -r 5 \
-            -d 1000
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -r 5 -d 1000
 ```
 
 #### Run collection in loop with 'X' interval without exit
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            -i 5000
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -i 5000
 ```
 
 #### Display details about tests and responses 
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            --verbose
+docker run itbusina/testlemon:latest -c "$(<collection.json)" --verbose
 ```
 
 #### Save details about tests and responses to the file
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            --verbose \
-            > output.json
+docker run itbusina/testlemon:latest -c "$(<collection.json)" --verbose > output.json
 ```
 
 #### Display and save details about tests and responses to the file
 ```shell
-docker run itbusina/testlemon:latest \
-            -c "$(<collection.json)" \
-            --verbose \
-            | tee output.json
+docker run itbusina/testlemon:latest -c "$(<collection.json)" --verbose | tee output.json
 ```
 
 ## Configurations
@@ -367,7 +335,6 @@ Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 name: Collection with secrets
 baseUrl: https://dummyjson.com
 tests:
-- url: "/products"
 - url: "/auth/login"
   method: POST
   body: '{"username":"${{ secrets.login }}","password":"${{ secrets.password }}"}'
@@ -498,7 +465,7 @@ baseUrl: https://dummyjson.com
 tests:
 - url: "/auth/login"
   validators:
-  - response-time: '1000'
+  - response-time: 1000
 ```
 
 ##### Validate Response Body Sentiment
