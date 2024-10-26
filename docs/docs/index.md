@@ -40,23 +40,23 @@ Web monitoring and APIs test automation platform.
   
 ### Quick start
 
-#### Create a collection file with API requests to test.
+#### Create a collection file with API tests to test.
+
+YAML config
+```yaml
+tests:
+- url: https://dummyjson.com/products
+```
 
 JSON config
 ```json
 {
-    "requests": [
+    "tests": [
       {
         "url": "https://dummyjson.com/products"
       }
     ]
 }
-```
-
-YAML config
-```yaml
-requests:
-- url: https://dummyjson.com/products
 ```
 
 #### Run docker image
@@ -66,7 +66,7 @@ docker run itbusina/testlemon:latest -c "$(<collection.json)"
 
 #### Run the example collection url
 ```shell
-docker run itbusina/testlemon:latest -c https://raw.githubusercontent.com/itbusina/testlemon-docs/refs/heads/main/src/examples/quick-start.yaml
+docker run itbusina/testlemon:latest -c https://raw.githubusercontent.com/itbusina/testlemon-docs/refs/heads/main/examples/quick-start.yaml
 
 #### Display help
 ```shell
@@ -99,15 +99,10 @@ docker run itbusina/testlemon:latest \
 #### Run collection inline.
 ```shell
 $collection = @'
-{
-  "name": "Dummy JSON collection 1",
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "url": "/users/1"
-    }
-  ]
-}
+name: Dummy JSON collection
+baseUrl: https://dummyjson.com
+tests:
+  - url: /users/1
 '@
 
 docker run itbusina/testlemon:latest -c $collection
@@ -131,7 +126,7 @@ docker run \
 
 #### Run collection from URL.
 ```shell
-docker run itbusina/testlemon:latest -c https://raw.githubusercontent.com/itbusina/testlemon-docs/refs/heads/main/src/examples/quick-start.yaml
+docker run itbusina/testlemon:latest -c https://raw.githubusercontent.com/itbusina/testlemon-docs/refs/heads/main/examples/quick-start.yaml
 ```
 
 #### Run collection from URL with authorization and required http headers.
@@ -198,14 +193,14 @@ docker run itbusina/testlemon:latest \
             -i 5000
 ```
 
-#### Display details about requests and responses 
+#### Display details about tests and responses 
 ```shell
 docker run itbusina/testlemon:latest \
             -c "$(<collection.json)" \
             --verbose
 ```
 
-#### Save details about requests and responses to the file
+#### Save details about tests and responses to the file
 ```shell
 docker run itbusina/testlemon:latest \
             -c "$(<collection.json)" \
@@ -213,7 +208,7 @@ docker run itbusina/testlemon:latest \
             > output.json
 ```
 
-#### Display and save details about requests and responses to the file
+#### Display and save details about tests and responses to the file
 ```shell
 docker run itbusina/testlemon:latest \
             -c "$(<collection.json)" \
@@ -226,53 +221,49 @@ docker run itbusina/testlemon:latest \
 ### Collection
 
 #### Collection with base address
-```json
-{
-    "baseUrl": "https://dummyjson.com",
-    "requests": [
-      {
-        "url": "/users"
-      }
-    ]
-}
+```yaml
+baseUrl: https://dummyjson.com
+tests:
+  - url: /users
 ```
 
 #### Collection without base address
-```json
-{
-    "requests": [
-      {
-        "url": "https://dummyjson.com/users"
-      }
-    ]
-}
+```yaml
+tests:
+  - url: https://dummyjson.com/users
 ```
 
 #### Collection with combination of base address and full url
-```json
-{
-    "baseUrl": "https://dummyjson.com",
-    "requests": [
-      {
-        "url": "/users"
-      },
-      {
-        "url": "https://google.com"
-      }
-    ]
-}
+```yaml
+baseUrl: https://dummyjson.com
+tests:
+  - url: /users
+  - url: https://google.com
 ```
 
-#### Collection with dependant requests
+#### Collection with dependant tests
 
-Use ```name``` and ```dependsOn``` request properties to create a dependency between requests
+Use ```name``` and ```dependsOn``` request properties to create a dependency between tests
+
+YAML config
+```yaml
+name: Collection with dependant tests
+baseUrl: https://dummyjson.com
+tests:
+- id: auth
+  url: "/auth/login"
+- dependsOn: auth
+  url: "/users/1"
+- dependsOn: auth
+  url: "/products"
+```
 
 JSON config
 ```json
 {
-    "name": "Collection with dependant requests",
+    "name": "Collection with dependant tests",
     "baseUrl": "https://dummyjson.com",
-    "requests": [
+    "tests": [
       {
         "id": "auth",
         "url": "/auth/login"
@@ -289,160 +280,97 @@ JSON config
 }
 ```
 
-YAML config
-```yaml
-name: Collection with dependant requests
-baseUrl: https://dummyjson.com
-requests:
-- id: auth
-  url: "/auth/login"
-- dependsOn: auth
-  url: "/users/1"
-- dependsOn: auth
-  url: "/products"
-```
-
-#### Collection with sharing context between requests
+#### Collection with sharing context between tests
 
 Use ```context``` property of request to save the context. The key to the context is defined by ```name``` property. Define the type, it can be ```variable``` (default) or ```secret```. Secret values are masked in the output. Use ```pattern``` property to define the regex for the value from response body to save to the context.
 
-Use ```${{ context.<name> }}``` to use context in further requests.
+Use ```${{ context.<name> }}``` to use context in further tests.
 
-```json
-{
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "id": "auth",
-      "url": "/auth/login",
-      "method": "POST",
-      "headers": [
-        "Content-Type: application/json"
-      ],
-      "body": "{\"username\":\"${{ secrets.login }}\",\"password\":\"${{ secrets.password }}\"}",
-      "context": [
-        {
-          "name": "token",
-          "type": "secret",
-          "pattern": "\"token\":\\s*\"([^\"]+)\""
-        }
-      ]
-    },
-    {
-      "dependsOn": "auth",
-      "url": "/auth/me",
-      "headers": [
-        "Authorization: Bearer ${{ context.token }}"
-      ]
-    }
-  ]
-}
+```yaml
+baseUrl: https://dummyjson.com
+tests:
+- id: auth
+  url: "/auth/login"
+  method: POST
+  headers:
+  - 'Content-Type: application/json'
+  body: '{"username":"${{ secrets.login }}","password":"${{ secrets.password }}"}'
+  context:
+  - name: token
+    type: secret
+    pattern: '"token":\s*"([^"]+)"'
+- dependsOn: auth
+  url: "/auth/me"
+  headers:
+  - 'Authorization: Bearer ${{ context.token }}'
 ```
 
 #### Collection with Tags
 
-Tags are used to filter requests.
+Tags are used to filter tests.
 
-```json
-{
-    "name": "Collection with Tags",
-    "baseUrl": "https://dummyjson.com",
-    "requests": [
-      {
-        "tags": [
-          "smoke",
-          "regression"
-        ],
-        "url": "/users/1"
-      }
-    ]
-}
+```yaml
+name: Collection with Tags
+baseUrl: https://dummyjson.com
+tests:
+- url: "/users/1" 
+  tags:
+    - smoke
+    - regression
 ```
 
 #### Collection with HTTP method
-```json
-{
-    "name": "Collection with http method",
-    "baseUrl": "https://dummyjson.com",
-    "requests": [
-      {
-        "url": "/users/1",
-        "method": "DELETE"
-      }
-    ]
-}
+```yaml
+name: Collection with http method
+baseUrl: https://dummyjson.com
+tests:
+- url: "/users/1"
+  method: DELETE
 ```
 
 #### Collection with http request headers
-```json
-{
-    "name": "Collection with http request headers",
-    "baseUrl": "https://dummyjson.com",
-    "requests": [
-      {
-        "url": "/users/1",
-        "headers": [
-          "Content-Type: application/json"
-        ]
-      }
-    ]
-}
+```yaml
+name: Collection with http request headers
+baseUrl: https://dummyjson.com
+tests:
+- url: "/users/1"
+  headers:
+  - 'Content-Type: application/json'
 ```
 
-#### Collection with multiple API requests
-```json
-{
-    "name": "Collection with multiple API requests",
-    "baseUrl": "https://dummyjson.com",
-    "requests": [
-      {
-        "url": "/auth/login",
-      },
-      {
-        "url": "/users/1",
-      },
-      {
-        "url": "/products"
-      }
-    ]
-}
+#### Collection with multiple API tests
+```yaml
+name: Collection with multiple API tests
+baseUrl: https://dummyjson.com
+tests:
+- url: "/auth/login"
+- url: "/users/1"
+- url: "/products"
 ```
 
 #### Using variables in collection
 
 Use ```${{ vars.<variable name> }}``` to put a variable in the collection.
 
-```json
-{
-    "name": "Collection with variables",
-    "baseUrl": "${{ vars.host }}",
-    "requests": [
-      {
-        "url": "/products"
-      }
-    ]
-}
+```yaml
+name: Collection with variables
+baseUrl: "${{ vars.host }}"
+tests:
+- url: "/products"
 ```
 
 #### Using secrets in collection
 
 Use ```${{ secrets.<secret name> }}``` to put a secret in the collection.
 
-```json
-{
-    "name": "Collection with secrets",
-    "baseUrl": "https://dummyjson.com",
-    "requests": [
-      {
-        "url": "/products"
-      },
-      {
-        "url": "/auth/login",
-        "method": "POST",
-        "body": "{\"username\":\"${{ secrets.login }}\",\"password\":\"${{ secrets.password }}\"}"
-      }
-    ]
-}
+```yaml
+name: Collection with secrets
+baseUrl: https://dummyjson.com
+tests:
+- url: "/products"
+- url: "/auth/login"
+  method: POST
+  body: '{"username":"${{ secrets.login }}","password":"${{ secrets.password }}"}'
 ```
 
 ### Functions
@@ -463,57 +391,40 @@ Notes: make sure to specify the OpenAPI key and endpoint to use 'gpt-' function.
 #### Function examples
 
 ##### Basic functions
-```json
-{
-  "name": "Collections with functions",
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "url": "/comments/add",
-      "method": "POST",
-      "headers": [
-        "Content-Type: application/json"
-      ],
-      "body": "{\"body\":\"This makes all sense to me! Date: ${{ func.utcnow() }}, Guid: ${{ func.guid() }}\",\"postId\":${{ func.random() }},\"userId\":5}"
-    }
-  ]
-}
+```yaml
+name: Collections with functions
+baseUrl: https://dummyjson.com
+tests:
+- url: "/comments/add"
+  method: POST
+  headers:
+  - 'Content-Type: application/json'
+  body: '{"body":"This makes all sense to me! Date: ${{ func.utcnow() }}, Guid: ${{
+    func.guid() }}","postId":${{ func.random() }},"userId":5}'
 ```
 
 ##### LLM functions
 Currently you can use any OpenAI models and gemma:2b model from Ollama.
 
-```json
-{
-  "name": "Collections with functions",
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "url": "/comments/add",
-      "method": "POST",
-      "headers": [
-        "Content-Type: application/json"
-      ],
-      "body": "{\"body\":\"${{ gpt-4o.text(50) }}\",\"postId\":1,\"userId\":5}"
-    },
-    {
-      "url": "/comments/add",
-      "method": "POST",
-      "headers": [
-        "Content-Type: application/json"
-      ],
-      "body": "{\"body\":\"${{ gpt-4.text(50) }}\",\"postId\":1,\"userId\":5}"
-    },
-    {
-      "url": "/comments/add",
-      "method": "POST",
-      "headers": [
-        "Content-Type: application/json"
-      ],
-      "body": "{\"body\":\"${{ gemma:2b.text(50) }}\",\"postId\":1,\"userId\":5}"
-    }
-  ]
-}
+```yaml
+name: Collections with functions
+baseUrl: https://dummyjson.com
+tests:
+- url: "/comments/add"
+  method: POST
+  headers:
+  - 'Content-Type: application/json'
+  body: '{"body":"${{ gpt-4o.text(50) }}","postId":1,"userId":5}'
+- url: "/comments/add"
+  method: POST
+  headers:
+  - 'Content-Type: application/json'
+  body: '{"body":"${{ gpt-4.text(50) }}","postId":1,"userId":5}'
+- url: "/comments/add"
+  method: POST
+  headers:
+  - 'Content-Type: application/json'
+  body: '{"body":"${{ gemma:2b.text(50) }}","postId":1,"userId":5}'
 ```
 
 ### Validators
@@ -522,18 +433,18 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 
 | Validator Name                                       | Description |
 | --------                                             | -------     |
-| is-successful: true &#124; false                       | Validates if the HTTP response is successful or not. When ```bool``` value is ```true``` status code is checked to be in the range 200-299.|
-| status-code: 200 &#124; 301 &#124; 404                   | Validates the HTTP status code of the response.|
+| is-successful: true &#124; false                     | Validates if the HTTP response is successful or not. When ```bool``` value is ```true``` status code is checked to be in the range 200-299.|
+| status-code: 200 &#124; 301 &#124; 404               | Validates the HTTP status code of the response.|
 | body-equals: keyword                                 | Validates that the response body exactly matches the provided ```keyword``` value. |
 | body-not-equals: keyword                             | Validates that the response body does not matche the provided ```keyword``` value. |
 | body-contains: keyword                               | Validates if the response body contains the ```text``` value.|
 | response-time: number                                | Validates that the response time is less than the ```time``` value in milliseconds.|
-| sentiment: negative &#124; neutral &#124; positive       | Validates that the response time is less than the ```time``` value in milliseconds.|
-| dns-dkim-exists: true &#124; false                     | Validates that the DNS has DKIM record.|
-| dns-spf-exists: true &#124; false                      | Validates that the DNS has SPF record.|
-| dns-dmarc-exists: true &#124; false                    | Validates that the DNS has DMARC record.|
-| dns-dmarc-single-record: true &#124; false             | Validates that the DNS has only one DMARC record.|
-| dns-dmarc-strict-policy: true &#124; false             | Validates that the DNS has DMARC policy set to ```reject``` or ```quarantine```.|
+| sentiment: negative &#124; neutral &#124; positive   | Validates that the response time is less than the ```time``` value in milliseconds.|
+| dns-dkim-exists: true &#124; false                   | Validates that the DNS has DKIM record.|
+| dns-spf-exists: true &#124; false                    | Validates that the DNS has SPF record.|
+| dns-dmarc-exists: true &#124; false                  | Validates that the DNS has DMARC record.|
+| dns-dmarc-single-record: true &#124; false           | Validates that the DNS has only one DMARC record.|
+| dns-dmarc-strict-policy: true &#124; false           | Validates that the DNS has DMARC policy set to ```reject``` or ```quarantine```.|
 | dns-record-exists: TXT:name:value                    | Validates that the DNS has ```TXT``` record with ```name``` and ```value```.|
 | prompt: gpt-4o:keyword                               | Validates that the response body text is ```keyword``` using ```gpt-4o``` LLM model.|
 | sitemap-any-body-contains: keyword                   | Validates that any page from all pages in sitemap contain ```keyword``` in the body.|
@@ -551,83 +462,53 @@ Currently you can use any OpenAI models and gemma:2b model from Ollama.
 #### Validators examples
 
 ##### Validate Http Status Code
-```json
-{
-  "name": "Validate Http Status Code",
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "url": "/auth/login",
-      "validators": [
-        { "status-code": "403" }
-      ]
-    }
-  ]
-}
+```yaml
+name: Validate Http Status Code
+baseUrl: https://dummyjson.com
+tests:
+- url: "/auth/login"
+  validators:
+  - status-code: '403'
 ```
 
 ##### Validate Http Body (Full match)
-```json
-{
-  "name": "Validate Http Body (Full match)",
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "url": "/auth/login",
-      "validators": [
-        { "body-equals": "{\"id\":1,\"body\":\"This is some awesome thinking!\",\"postId\":100,\"user\":{\"id\":63,\"username\":\"eburras1q\"}}" }
-      ]
-    }
-  ]
-}
+```yaml
+name: Validate Http Body (Full match)
+baseUrl: https://dummyjson.com
+tests:
+- url: "/auth/login"
+  validators:
+  - body-equals: '{"id":1,"body":"This is some awesome thinking!","postId":100,"user":{"id":63,"username":"eburras1q"}}'
 ```
 
 ##### Validate Http Body (Contains)
-```json
-{
-  "name": "Validate Http Body (Contains)",
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "url": "/auth/login",
-      "validators": [
-        { "body-contains": "This is some awesome thinking!" }
-      ]
-    }
-  ]
-}
+```yaml
+name: Validate Http Body (Contains)
+baseUrl: https://dummyjson.com
+tests:
+- url: "/auth/login"
+  validators:
+  - body-contains: This is some awesome thinking!
 ```
 
 ##### Validate Response time
-```json
-{
-  "name": "Validate Http Body (Contains)",
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "url": "/auth/login",
-      "validators": [
-        { "response-time": "1000" }
-      ]
-    }
-  ]
-}
+```yaml
+name: Validate Http Body (Contains)
+baseUrl: https://dummyjson.com
+tests:
+- url: "/auth/login"
+  validators:
+  - response-time: '1000'
 ```
 
 ##### Validate Response Body Sentiment
-```json
-{
-  "name": "Validate Sentiment",
-  "baseUrl": "https://dummyjson.com",
-  "requests": [
-    {
-      "url": "/comments?limit=1&select=body",
-      "validators": [
-        { "sentiment": "positive" }
-      ]
-    }
-  ]
-}
+```yaml
+name: Validate Sentiment
+baseUrl: https://dummyjson.com
+tests:
+- url: "/comments?limit=1&select=body"
+  validators:
+  - sentiment: positive
 ```
 
 ## Integrations
