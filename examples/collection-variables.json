@@ -1,7 +1,7 @@
 {
   "name": "Collection to test variables",
   "baseUrl": "${{ vars.host }}",
-  "requests": [
+  "tests": [
     {
       "url": "/users/1"
     }

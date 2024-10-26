@@ -1,5 +1,5 @@
 name: Monitor website pages from sitemap
-requests:
+tests:
 - url: https://website.com/
   validators:
   - sitemap-each-body-contains: "website"       # True when All pages contain keyword

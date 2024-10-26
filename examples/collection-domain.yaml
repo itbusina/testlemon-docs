@@ -1,5 +1,5 @@
 name: Domain expiration date tests
-requests:
+tests:
 - url: https://google.com
   validators:
   - domain-expiration-after: 1

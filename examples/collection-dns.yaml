@@ -1,5 +1,5 @@
 name: DNS tests
-requests:
+tests:
 - url: https://website.com
   validators:
   - dns-record-exists: "A:@:55.55.55.55"

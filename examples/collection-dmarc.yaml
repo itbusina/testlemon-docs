@@ -1,5 +1,5 @@
 name: DMARC tests
-requests:
+tests:
 - url: https://website.com
   validators:
   - dns-dmarc-exists: true

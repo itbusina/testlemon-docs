@@ -1,7 +1,7 @@
 {
   "name": "Collection to test functions",
   "baseUrl": "https://dummyjson.com",
-  "requests": [
+  "tests": [
     {
       "url": "/comments/add",
       "method": "POST",

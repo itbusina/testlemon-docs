@@ -1,5 +1,5 @@
 name: SSL tests
-requests:
+tests:
 - url: https://www.google.com/
   validators:
   - ssl-expiration-after: 1

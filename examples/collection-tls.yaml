@@ -1,5 +1,5 @@
 name: TLS tests
-requests:
+tests:
 - url: https://website.com
   validators:
   - tls-version-equals: Tls13

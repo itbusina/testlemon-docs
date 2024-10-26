@@ -1,7 +1,7 @@
 {
   "name": "Collection to test openai function.",
   "baseUrl": "https://dummyjson.com",
-  "requests": [
+  "tests": [
     {
       "url": "/comments/add",
       "method": "POST",

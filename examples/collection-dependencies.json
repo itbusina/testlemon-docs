@@ -1,7 +1,7 @@
 {
   "name": "Collection to test dependencies",
   "baseUrl": "https://dummyjson.com",
-  "requests": [
+  "tests": [
     {
       "id": "getUsers",
       "url": "/users/1"
