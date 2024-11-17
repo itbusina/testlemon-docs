@@ -7,7 +7,7 @@ nav:
   - Platform Configuration:
     - Home: index.md
   - Learning Center:
-    - Use Testlemon to Test API: use-testlemon-to-test-api.md
+    - How to Test API with TestLemon: how-to-test-api-with-testlemon.md
   - References:
     - Examples: 'https://github.com/itbusina/testlemon-docs/tree/main/examples'
     - Portal: 'https://app.testlemon.com/'
