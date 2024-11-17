@@ -1,3 +1,3 @@
-# Use Testlemon to Test API
+# How to test api with Testlemon
 
 Web monitoring and APIs test automation platform.
