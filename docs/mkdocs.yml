@@ -1,5 +1,6 @@
 site_name: TestLemon Documentation
 site_url: https://docs.testlemon.com/
+site_description: 'Optimize your workflows with our powerful Web API Testing and Monitoring Tool. Automate testing, monitor performance, and ensure seamless API functionality with ease.'
 theme:
   name: readthedocs
 extra_css: [css/extra.css]
