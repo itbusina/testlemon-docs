@@ -8,10 +8,15 @@ nav:
   - Platform Configuration:
     - Home: index.md
   - Learning Center:
-    - How to Test API with TestLemon: how-to-test-api-with-testlemon.md
+    - Rest API: rest-api.md
+    # - API Testing: api-testing.md
+    # - AI Augmented Testing: ai-augmented-testing.md
+    - How to test API with Testlemon: how-to-test-api-with-testlemon.md
+    # - Test end-to-end API workflows in Testlemon: test-end-to-end-api-workflows-in-testlemon.md
   - References:
     - Examples: 'https://github.com/itbusina/testlemon-docs/tree/main/examples'
     - Portal: 'https://app.testlemon.com/'
     - Contact Us: 'https://testlemon.com/index.html#contact'
-  - Privacy Policy: privacy-policy.md
-  - Terms of Use: terms-of-use.md
+  - Terms:
+    - Privacy Policy: privacy-policy.md
+    - Terms of Use: terms-of-use.md

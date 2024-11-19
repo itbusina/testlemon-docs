@@ -6,6 +6,8 @@ _Keywords: test API endpoints, Testlemon, testing tool, functionality, security,
 
 _Read time: 10 minutes_
 
+_Level: Basic_
+
 
 Are you looking for a reliable and efficient way to test your API endpoints? Look no further than Testlemon. In this article, we will explore how to test API endpoints using Testlemon, a powerful testing tool that can help you ensure the functionality, security, and performance of your APIs. Whether you are a developer or a QA tester, Testlemon provides a user-friendly interface and comprehensive features that simplify the testing process.
 
