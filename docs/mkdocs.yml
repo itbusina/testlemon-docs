@@ -10,7 +10,7 @@ nav:
   - Learning Center:
     - Rest API: rest-api.md
     # - API Testing: api-testing.md
-    # - AI Augmented Testing: ai-augmented-testing.md
+    - AI Augmented Testing: ai-augmented-testing.md
     - How to test API with Testlemon: how-to-test-api-with-testlemon.md
     # - Test end-to-end API workflows in Testlemon: test-end-to-end-api-workflows-in-testlemon.md
   - References:
