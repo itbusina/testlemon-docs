@@ -81,8 +81,8 @@ curl -X POST https://api.example.com/events \
 -d '{"name": "Launch", "date": "invalid-date-format"}'
 ```
 
-Expected Output: 400 Bad Request
-
+Expected Response:
+- Status Code: 400 Bad Request
 
 #### Validation of mandatory vs. optional parameters.
 Ensure that mandatory parameters are enforced while optional ones have default behaviors.
@@ -103,7 +103,9 @@ Expected Error: "error": "Field 'name' is required."
 ```bash
 curl -X GET https://api.example.com/users/null'
 ```
-Expected Error: 400 Bad Request
+
+Expected Response:
+- Status Code: 400 Bad Request
 
 ### Authentication and Authorization
 #### Verification of authentication mechanisms (e.g., API keys, OAuth tokens).
@@ -116,8 +118,7 @@ curl -X GET https://api.example.com/secure-data -H "Authorization: Bearer expire
 ```
 
 Expected Response: 
-
-HTTP Status Code: 401 Unauthorized
+- Status Code: 401 Unauthorized
 
 #### Proper enforcement of access controls for different user roles.
 
@@ -126,21 +127,18 @@ Request example:
 curl -X GET https://api.example.com/secure-data -H "Authorization: Bearer admin_token"
 ```
 
-
-Expected Response Status Code: 200 OK
-
-Expected Response Body:  { "secured-data" }
+Expected Response:
+- Status Code: 200 OK
+- Body:  { "secured-data" }
 
 Request example:
 ```bash
 curl -X GET https://api.example.com/secure-data -H "Authorization: Bearer user_token"
 ```
 
-
-Expected Response Status Code: 401 Unauthorized
-
-Expected Response Body:  { "empty" }
-
+Expected Response:
+- Status Code: 401 Unauthorized
+- Body:  { "empty" }
 
 ### Response Validation
 #### Correctness of response data and structure (e.g., JSON, XML schema validation).
@@ -167,6 +165,7 @@ curl -X POST https://api.example.com/events \
 -H "Content-Type: application/json" \
 -d '{"name": "Conference", "date": "2024-11-20T10:30:00Z"}'
 ```
+
 Expected Output:
 ```json
 {
@@ -185,25 +184,20 @@ curl -X POST https://api.example.com/events \
 -d '{"name": "Conference", "date": "20-11-2024"}'
 ```
 
-Expected Error:
-HTTP Status Code: 400 Bad Request
-Error Response:
-
-```json
-{ "error": "Invalid date format. Use ISO 8601 (YYYY-MM-DDTHH:mm:ssZ)." }
-```
-
+Expected Response:
+- Status Code: 400 Bad Request
+- Body: { "error": "Invalid date format. Use ISO 8601 (YYYY-MM-DDTHH:mm:ssZ)." }
 
 ### Error Handling
 #### Meaningful and descriptive error messages.
-Error messages should clearly explain the problem, enabling developers to identify and fix issues quickly. A good error message provides:
+Error messages should clearly explain the problem, enabling developers to identify and fix issues quickly.
 
+A good error message provides:
 - Context: What went wrong (e.g., invalid input, missing field).
 - Resolution Guidance: Suggestions for correcting the issue.
 - HTTP Status Code: Properly aligned with the error type (e.g., 400 Bad Request, 404 Not Found).
 
 Why It Matters
-
 - Reduces debugging time.
 - Improves the developer experience.
 - Enhances API documentation clarity.
@@ -218,8 +212,9 @@ curl -X POST https://api.example.com/users \
 ```
 
 Expected Response:
-HTTP Status Code: 400 Bad Request
-Error Message:
+- Status Code: 400 Bad Request
+- Error Message:
+
 ```json
 {
   "error": {
@@ -231,16 +226,16 @@ Error Message:
   }
 }
 ```
+
 This error message:
-1.	Describes the overall issue (“Invalid input data”).
-2.	Specifies which fields are problematic and why.
-3.	Guides developers toward resolving the error.
+1. Describes the overall issue (“Invalid input data”).
+2. Specifies which fields are problematic and why.
+3. Guides developers toward resolving the error.
 
 #### Proper use of HTTP status codes (e.g., 200 for success, 404 for not found, 500 for server errors).
 APIs should adhere to standard HTTP status codes to communicate the outcome of a request effectively. Correct usage improves clarity, consistency, and the developer experience.
 
 Common HTTP Status Codes
-
 - 200 OK: Request succeeded, and the server returned the expected response.
 - 201 Created: Resource successfully created (e.g., POST request).
 - 400 Bad Request: The server cannot process the request due to client-side errors (e.g., validation failure).
@@ -249,7 +244,6 @@ Common HTTP Status Codes
 - 500 Internal Server Error: The server encountered an error it couldn’t handle.
 
 Why It Matters
-
 - Provides clear communication about the request’s outcome.
 - Helps developers quickly identify the root cause of issues.
 - Aligns with RESTful principles and best practices.
@@ -259,8 +253,8 @@ Why It Matters
 Ensure that repeating the same request does not change the outcome.
 
 #### Idempotency for PUT and DELETE requests.
-1.	Execute a DELETE request twice.
-2.	Verify that the first request deletes the resource, and the second returns a 404 Not Found.
+1. Execute a DELETE request twice.
+2. Verify that the first request deletes the resource, and the second returns a 404 Not Found.
 
 ### Business Logic
 #### Validation of rules and calculations implemented in the API.
@@ -285,10 +279,11 @@ Expected Response:
   "total": 90
 }
 ```
+
 #### Correct application of filters, sorting, and pagination.
 APIs often provide filters, sorting, and pagination to manage large datasets effectively. Validating these features ensures the API delivers accurate, organized, and manageable results based on client requests.
 
-Example
+Example:
 
 Scenario: Retrieving a List of Users with Filters, Sorting, and Pagination
 
@@ -298,7 +293,7 @@ curl -X GET "https://api.example.com/users?role=admin&sort=name&order=asc&page=2
 ```
 
 Expected Response:
-HTTP Status Code: 200 OK
+- Status Code: 200 OK
 
 ```json
 {
@@ -323,7 +318,6 @@ HTTP Status Code: 200 OK
 APIs adhering to REST principles should be stateless, meaning each request should contain all the information needed for the server to process it. No client-specific data should persist on the server between requests unless explicitly required (e.g., sessions or transactions).
 
 Why It Matters
-
 - Ensures scalability by avoiding server-side dependency on client state.
 - Simplifies debugging and testing by making requests independent.
 - Aligns with RESTful architecture principles.
@@ -332,7 +326,7 @@ Example
 
 Scenario: Stateless API for User Authentication
 
-1.	First Request: Login and Obtain Token
+First Request: Login and Obtain Token
 Test Input (cURL):
 ```bash
 curl -X POST https://api.example.com/auth/login \
@@ -345,7 +339,7 @@ Expected Response:
 { "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." }
 ```
 
-2.	Second Request: Fetch User Details Using Token
+Second Request: Fetch User Details Using Token
 Test Input (cURL):
 ```bash
 curl -X GET https://api.example.com/users/me \
@@ -357,7 +351,7 @@ Expected Response:
 { "id": 1, "username": "john", "email": "john@example.com" }
 ```
 
-3.	Validation:
+Validation:
 - Ensure the second request is processed independently of the first request’s context.
 - Confirm that user details are accessible solely using the token, with no reliance on server-side state.
 
@@ -393,7 +387,8 @@ Example Test:
 curl -X GET http://api.example.com/secure-data
 ```
 
-Expected Response: 403 Forbidden
+Expected Response:
+- Status Code: 403 Forbidden
 
 #### Validation of data encryption (if applicable).
 Data encryption ensures that sensitive information transmitted between the client and server is secure and protected from unauthorized access. Validating encryption ensures that data, such as authentication tokens, personal information, or payment details, is encrypted both in transit (using protocols like HTTPS) and at rest (if applicable).
