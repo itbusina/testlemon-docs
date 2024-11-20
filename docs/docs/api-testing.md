@@ -39,6 +39,7 @@ Expected Response:
 APIs should gracefully handle errors caused by invalid inputs, returning meaningful error messages.
 
 Example Test Case:
+
 - Input: Invalid User ID (abc instead of numeric).
 - Expected Output: HTTP Status Code: 400 Bad Request
 - Error Response:
@@ -82,6 +83,7 @@ curl -X POST https://api.example.com/events \
 ```
 
 Expected Response:
+
 - Status Code: 400 Bad Request
 
 #### Validation of mandatory vs. optional parameters.
@@ -105,6 +107,7 @@ curl -X GET https://api.example.com/users/null'
 ```
 
 Expected Response:
+
 - Status Code: 400 Bad Request
 
 ### Authentication and Authorization
@@ -118,6 +121,7 @@ curl -X GET https://api.example.com/secure-data -H "Authorization: Bearer expire
 ```
 
 Expected Response: 
+
 - Status Code: 401 Unauthorized
 
 #### Proper enforcement of access controls for different user roles.
@@ -128,6 +132,7 @@ curl -X GET https://api.example.com/secure-data -H "Authorization: Bearer admin_
 ```
 
 Expected Response:
+
 - Status Code: 200 OK
 - Body:  { "secured-data" }
 
@@ -137,6 +142,7 @@ curl -X GET https://api.example.com/secure-data -H "Authorization: Bearer user_t
 ```
 
 Expected Response:
+
 - Status Code: 401 Unauthorized
 - Body:  { "empty" }
 
@@ -185,6 +191,7 @@ curl -X POST https://api.example.com/events \
 ```
 
 Expected Response:
+
 - Status Code: 400 Bad Request
 - Body: { "error": "Invalid date format. Use ISO 8601 (YYYY-MM-DDTHH:mm:ssZ)." }
 
@@ -193,11 +200,13 @@ Expected Response:
 Error messages should clearly explain the problem, enabling developers to identify and fix issues quickly.
 
 A good error message provides:
+
 - Context: What went wrong (e.g., invalid input, missing field).
 - Resolution Guidance: Suggestions for correcting the issue.
 - HTTP Status Code: Properly aligned with the error type (e.g., 400 Bad Request, 404 Not Found).
 
 Why It Matters
+
 - Reduces debugging time.
 - Improves the developer experience.
 - Enhances API documentation clarity.
@@ -212,6 +221,7 @@ curl -X POST https://api.example.com/users \
 ```
 
 Expected Response:
+
 - Status Code: 400 Bad Request
 - Error Message:
 
@@ -228,6 +238,7 @@ Expected Response:
 ```
 
 This error message:
+
 1. Describes the overall issue (“Invalid input data”).
 2. Specifies which fields are problematic and why.
 3. Guides developers toward resolving the error.
@@ -235,7 +246,8 @@ This error message:
 #### Proper use of HTTP status codes (e.g., 200 for success, 404 for not found, 500 for server errors).
 APIs should adhere to standard HTTP status codes to communicate the outcome of a request effectively. Correct usage improves clarity, consistency, and the developer experience.
 
-Common HTTP Status Codes
+Common HTTP Status Codes:
+
 - 200 OK: Request succeeded, and the server returned the expected response.
 - 201 Created: Resource successfully created (e.g., POST request).
 - 400 Bad Request: The server cannot process the request due to client-side errors (e.g., validation failure).
@@ -244,6 +256,7 @@ Common HTTP Status Codes
 - 500 Internal Server Error: The server encountered an error it couldn’t handle.
 
 Why It Matters
+
 - Provides clear communication about the request’s outcome.
 - Helps developers quickly identify the root cause of issues.
 - Aligns with RESTful principles and best practices.
@@ -293,6 +306,7 @@ curl -X GET "https://api.example.com/users?role=admin&sort=name&order=asc&page=2
 ```
 
 Expected Response:
+
 - Status Code: 200 OK
 
 ```json
@@ -317,7 +331,8 @@ Expected Response:
 #### Proper handling of statelessness (no client data stored on the server across requests unless explicitly required).
 APIs adhering to REST principles should be stateless, meaning each request should contain all the information needed for the server to process it. No client-specific data should persist on the server between requests unless explicitly required (e.g., sessions or transactions).
 
-Why It Matters
+Why It Matters:
+
 - Ensures scalability by avoiding server-side dependency on client state.
 - Simplifies debugging and testing by making requests independent.
 - Aligns with RESTful architecture principles.
@@ -352,6 +367,7 @@ Expected Response:
 ```
 
 Validation:
+
 - Ensure the second request is processed independently of the first request’s context.
 - Confirm that user details are accessible solely using the token, with no reliance on server-side state.
 
@@ -388,6 +404,7 @@ curl -X GET http://api.example.com/secure-data
 ```
 
 Expected Response:
+
 - Status Code: 403 Forbidden
 
 #### Validation of data encryption (if applicable).
