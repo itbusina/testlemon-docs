@@ -1,6 +1,6 @@
 site_name: TestLemon Documentation
 site_url: https://docs.testlemon.com/
-site_description: 'Optimize your workflows with our powerful Web API Testing and Monitoring Tool. Automate testing, monitor performance, and ensure seamless API functionality with ease.'
+site_description: 'Test API, automate API testing, and monitor performance with our AI-augmented testing tool. Ensure seamless functionality with website monitoring, domain monitoring, site check, DMARC, DNS checks, and more. Streamline test automation and enhance API reliability.'
 theme:
   name: readthedocs
 extra_css: [css/extra.css]
