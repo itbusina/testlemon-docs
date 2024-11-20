@@ -52,7 +52,9 @@ tests:
 
 In the example above there are two test cases defined to validate GET /products and GET /users API endppoints. The requests will be sent to the server.com host and the responses will be validated to be successful (HTTP 200 status code).
 
-For more advanced testing Testlemon provides a list of built-in validators and test chaining.
+To see mode details how to configure test collections go here: [Link](/#collection)
+
+Testlemon provides a list of built-in validators and test chaining to cover complex workflows. The list of available validators can be found here: [Link](/#validators)
 
 ```yaml
 baseUrl: https://dummyjson.com
@@ -83,7 +85,7 @@ After configuring the tests, Testlemon enables users to run them with just a few
 docker run itbusina/testlemon:latest -c "$(<collection.yaml)"
 ```
 
-In the example above, the docker image ```itbusina/testlemon``` is used to execute the test collection.
+In the example above, the docker image [itbusina/testlemon](https://hub.docker.com/r/itbusina/testlemon) is used to execute the test collection.
 
 You can also execute the collection in cloud application.
 
