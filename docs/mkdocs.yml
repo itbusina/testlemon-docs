@@ -1,6 +1,9 @@
 site_name: TestLemon Documentation
 site_url: https://docs.testlemon.com/
-site_description: 'Test API, automate API testing, and monitor performance with our AI-augmented testing tool. Ensure seamless functionality with website monitoring, domain monitoring, site check, DMARC, DNS checks, and more. Streamline test automation and enhance API reliability.'
+site_meta:
+  description: "Test API, automate API testing, and monitor website uptime and domain configuration with our AI-augmented testing tool. Ensure seamless functionality with website monitoring, domain monitoring, site check, DMARC, DNS checks, and more. Streamline test automation and enhance API reliability."
+  keywords: "api testing, site monitoring, test automation, dmarc, dkim, dns, test SSL, check TLS, test REST API, domain check, monitor website, uptime monitoring"
+  author: "Kiryl Bahdanovich | CEO in itbusina.com | Founder of testlemon.com"
 theme:
   name: readthedocs
 extra_css: [css/extra.css]
