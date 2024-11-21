@@ -2,7 +2,7 @@
 title: The Future of Software Quality Assurance
 summary: AI Augmented Testing
 url: /ai-augmented-testing
-image: https://docs.testlemon.com/images/ai-augmented-testing-thumbnail.jpeg
+image: images/ai-augmented-testing-thumbnail.jpeg
 ---
 
 # AI-Augmented Testing: The Future of Software Quality Assurance
