@@ -16,7 +16,7 @@ nav:
     - API Testing: api-testing.md
     - AI Augmented Testing: ai-augmented-testing.md
     - How to test API with Testlemon: how-to-test-api-with-testlemon.md
-    # - Test end-to-end API workflows in Testlemon: test-end-to-end-api-workflows-in-testlemon.md
+    - Test end-to-end API workflows in Testlemon: test-end-to-end-api-workflows-in-testlemon.md
   - References:
     - Examples: 'https://github.com/itbusina/testlemon-docs/tree/main/examples'
     - Portal: 'https://app.testlemon.com/'
