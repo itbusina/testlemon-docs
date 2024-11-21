@@ -1,6 +1,6 @@
 ---
 title: AI Augmented Testing - The Future of Software Quality Assurance
-description: AI Augmented Testing
+summary: AI Augmented Testing
 url: /ai-augmented-testing
 image: /images/ai-augmented-testing-thumbnail.jpeg
 ---

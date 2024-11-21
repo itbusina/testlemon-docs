@@ -8,7 +8,7 @@
     <meta name="keywords" content="{{ config.site_meta.keywords }}" />
     <meta name="author" content="{{ config.site_meta.author }}" />
     <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:description" content="{{ page.summary }}">
     <meta property="og:image" content="{{ page.image }}">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ page.title }}"">
-    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:description" content="{{ page.summary }}">
     <meta name="twitter:image" content="{{ page.image }}">
 
     {%- if page and page.canonical_url %}
