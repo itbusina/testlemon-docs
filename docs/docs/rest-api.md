@@ -10,11 +10,11 @@ _Level: intermidiate_
 
 ![What is REST API and how it works?](images/rest-api.png "Diagram showing a client to server communication using REST API.")
 
-When building and testing modern web applications, APIs are foundational tools. Representational State Transfer (REST) has become a dominant architectural style for designing networked applications. This article dives into what REST APIs are, their importance, and considerations for testing, ensuring you can effectively leverage them in your projects.
+When building and testing modern web applications, APIs are foundational tools. Representational State Transfer (REST) has become a dominant architectural style for designing networked applications. This article dives into what **REST APIs** are, their importance, and considerations for testing, ensuring you can effectively leverage them in your projects.
 
 ## What makes API a REST API?
 
-An API, or Application Programming Interface, allows two software applications to communicate with each other. It defines rules and protocols for interaction. A REST API, short for Representational State Transfer API, adheres to REST architectural principles, emphasizing stateless communication and leveraging standard HTTP methods like GET, POST, PUT, and DELETE.
+An API, or Application Programming Interface, allows two software applications to communicate with each other. It defines rules and protocols for interaction. A **REST API**, short for Representational State Transfer API, adheres to **REST** architectural principles, emphasizing stateless communication and leveraging standard HTTP methods like GET, POST, PUT, and DELETE.
 
 ## Key Features
 
@@ -60,6 +60,6 @@ Common tools for testing include Testlemon, Postman, SoapUI, and automated frame
 ## The Role in Modern Development?
 REST APIs are crucial for connecting systems in modern software, promoting modularity and best practices like separation of concerns. They help senior developers design scalable solutions and aid testers with their predictable structure for efficient debugging and validation.
 
-In summary, understanding REST APIs, testing their robustness, and applying them effectively are vital for building resilient applications. Leveraging tools and methods for API testing can streamline development and QA workflows.
+In summary, understanding **REST APIs**, testing their robustness, and applying them effectively are vital for building resilient applications. Leveraging tools and methods for API testing can streamline development and QA workflows.
 
-Mastering REST APIs enables developers and testers to deliver applications that excel in usability, reliability, and performance.
+Mastering APIs enables developers and testers to deliver applications that excel in usability, reliability, and performance.
