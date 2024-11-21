@@ -8,13 +8,16 @@ _Read time: 5 minutes_
 
 _Level: intermidiate_
 
+
 When building and testing modern web applications, REST APIs are foundational tools. Representational State Transfer (REST) has become a dominant architectural style for designing networked applications. This article dives into what REST APIs are, their importance, and considerations for testing, ensuring you can effectively leverage them in your projects.
 
-## What is an API and REST API?
+![What is REST API and how it works?](images/rest-api.png "Diagram showing a client to server communication using REST API.")
+
+## What makes API a REST API?
 
 An API, or Application Programming Interface, allows two software applications to communicate with each other. It defines rules and protocols for interaction. A REST API, short for Representational State Transfer API, adheres to REST architectural principles, emphasizing stateless communication and leveraging standard HTTP methods like GET, POST, PUT, and DELETE.
 
-## Key Features of REST APIs
+## Key Features
 
 | Feature               | Description |
 | --------              | -------     |
@@ -26,7 +29,7 @@ An API, or Application Programming Interface, allows two software applications t
 
 For example, in a RESTful service, a GET request to https://api.example.com/users might fetch a list of users, while a POST request to the same endpoint would create a new user.
 
-## REST API Definition and Use Cases
+## Definition and Use Cases
 
 The REST API definition emphasizes scalability, simplicity, and flexibility. REST APIs are widely used in scenarios like:
 
@@ -34,7 +37,7 @@ The REST API definition emphasizes scalability, simplicity, and flexibility. RES
 - Mobile and Web Applications: Data retrieval and user interaction.
 - Third-Party Integrations: Connecting external services like payment gateways or social media platforms.
 
-## Why REST?
+## Benefits
 | Benefit               | Explanation |
 | --------              | -------     |
 | Platform Independence         | Works across multiple programming languages and platforms. |
@@ -55,7 +58,7 @@ Common tools for REST API testing include Postman, SoapUI, and automated framewo
 - Headers and Payloads: Ensuring they match expected formats and content.
 - Authentication: Testing mechanisms like OAuth and API keys.
 
-## What is REST API’s Role in Modern Development?
+## The Role in Modern Development?
 REST APIs are pivotal for connecting diverse systems in today’s software landscape. They enable modularity and encourage best practices like separation of concerns, making them essential for senior developers designing scalable solutions. Additionally, testers benefit from their predictable structure, allowing more efficient debugging and validation.
 
 To summarize, understanding what REST APIs are, testing their robustness, and recognizing their application is key to building resilient and scalable applications. Adopting tools and methodologies tailored to REST API testing can significantly enhance your development and QA workflows.
