@@ -1,6 +1,5 @@
 ---
-title: The Future of Software Quality Assurance
-description: AI Augmented Testing
+description: AI Augmented testing involves integrating artificial intelligence (AI) and machine learning (ML) into the software testing lifecycle. Unlike conventional testing approaches, AI driven tools leverage algorithms to analyze patterns, predict outcomes, and automate complex processes. This improves the efficiency and reliability of testing while minimizing human intervention.
 image: images/ai-augmented-testing-thumbnail.jpeg
 ---
 
