@@ -1,7 +1,7 @@
 ---
-title: "The Future of Software Quality Assurance"
-description: "AI Augmented Testing"
-image: "images/ai-augmented-testing-thumbnail.jpeg"
+title: The Future of Software Quality Assurance
+description: AI Augmented Testing
+image: images/ai-augmented-testing-thumbnail.jpeg
 ---
 
 # AI-Augmented Testing: The Future of Software Quality Assurance
