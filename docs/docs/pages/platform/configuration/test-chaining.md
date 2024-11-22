@@ -6,9 +6,8 @@ Test chaining is essential for verifying complex scenarios where one test’s ou
 
 ### Define test dependencies
 
-Use ```name``` and ```dependsOn``` fields in tests to create a dependency.
+Use ```id``` and ```dependsOn``` fields in tests to create a dependency.
 
-YAML config
 ```yaml
 name: Collection with dependant tests
 baseUrl: https://dummyjson.com
