@@ -51,10 +51,9 @@ nav:
       #- Alternative to Betterstack: coming-soon.md
       #- Alternative to Insomnia: coming-soon.md
       #- Alternative to Pinghome: coming-soon.md
-  - Terms:
-    - Privacy Policy: pages/terms/privacy-policy.md
-    - Terms of Use: pages/terms/terms-of-use.md
   - References:
     - Examples: 'https://github.com/itbusina/testlemon-docs/tree/main/examples'
     - Portal: 'https://app.testlemon.com/'
     - Contact Us: 'https://testlemon.com/index.html#contact'
+  - Privacy Policy: pages/terms/privacy-policy.md
+  - Terms of Use: pages/terms/terms-of-use.md
