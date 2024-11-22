@@ -1,4 +1,4 @@
-# Using variables in test collection
+# Using tags in test collection
 
 Tags are used to categorize and filter tests within a test collection, making it easier to organize and execute specific subsets of tests. By assigning tags to tests, you can run targeted test groups based on criteria such as functionality, priority, or environment. This approach streamlines test management and enhances the efficiency of the testing process.
 

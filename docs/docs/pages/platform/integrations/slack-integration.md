@@ -1,4 +1,4 @@
-# How to integrate Testlemon in GitHub pipeline
+# How to integrate Slack notifications in Testlemon
 
 Testlemon’s Slack integration enables teams to receive instant notifications about issues and test failures, ensuring timely awareness and quicker resolution.
 

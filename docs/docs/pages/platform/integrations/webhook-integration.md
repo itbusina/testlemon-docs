@@ -1,4 +1,4 @@
-# How to integrate Testlemon in GitHub pipeline
+# How to integrate any webhook in Testlemon
 
 Testlemon’s webhook integration enables teams to send the failed result data to any URL. The data is send using POST http method.
 
