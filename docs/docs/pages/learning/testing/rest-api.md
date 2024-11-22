@@ -8,7 +8,7 @@ _Read time: 5 minutes_
 
 _Level: intermidiate_
 
-![What is REST API and how it works?](images/rest-api.png "Diagram showing a client to server communication using REST API.")
+![What is REST API and how it works?](/images/testing/rest-api.png "Diagram showing a client to server communication using REST API.")
 
 When building and testing modern web applications, APIs are foundational tools. Representational State Transfer (REST) has become a dominant architectural style for designing networked applications. This article dives into what **REST APIs** are, their importance, and considerations for testing, ensuring you can effectively leverage them in your projects.
 
