@@ -1,4 +1,4 @@
-name: XRay manual tests provisioning
+name: XRay automatic tests provisioning
 
 on:
   #push:
@@ -15,8 +15,18 @@ jobs:
     - name: Code checkout
       uses: actions/checkout@v4
 
-    - name: Run tests
+    - name: Run tests with manual provisioning
       run: |
-        docker pull itbusina/testlemon:latest
-        docker run itbusina/testlemon:latest -c "$(<./examples/xray/manual-xray-provisioning.yaml)" -o output -f xray
-        ls
+        docker run --name testlemon itbusina/testlemon:latest -c "$(<./examples/xray/manual-xray-provisioning.yaml)" -o output.json -f xray
+        docker cp testlemon:/app/output.json output.json
+        docker rm testlemon
+
+    - name: Upload test results to XRay
+      shell: pwsh
+      run: |
+        $client_id = "${{ secrets.XRAY_CLIENT_ID }}"
+        $client_secret = "${{ secrets.XRAY_CLIENT_SECRET }}"
+        $jira_base_url = "${{ secrets.XRAY_JIRA_BASE_URL }}"
+        $test_results = Get-Content "output.json"
+        ./scripts/xray-import.ps1 -client_id $client_id -client_secret $client_secret -jira_base_url $jira_base_url -test_results $test_results
+        

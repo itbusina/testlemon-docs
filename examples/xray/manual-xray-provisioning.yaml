@@ -1,7 +1,7 @@
 name: Manual XRay provisioning collection
 baseUrl: https://dummyjson.com
 metadata:
-  - execution-description: "Manual XRay provisioning test execution description"
+  - execution-description: "Manual XRay provisioning test execution"
     revision: 1
     version: 1.0.0
     test-plan-key: "XSP-88"
