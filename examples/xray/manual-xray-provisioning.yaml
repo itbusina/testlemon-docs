@@ -10,6 +10,8 @@ tests:
   - url: /users
     metadata:
       - test-key: XSP-85
+        requirement-keys: XSP-83
   - url: /users/1
     metadata:
       - test-key: XSP-86
+        requirement-keys: XSP-83
