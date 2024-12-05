@@ -1,0 +1,22 @@
+name: Example how to do XRAY manual tests provisioning
+
+on:
+  #push:
+  #  paths:
+  #    - 'src/api/**'
+  #  branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - name: Code checkout
+      uses: actions/checkout@v4
+
+    - name: Run tests
+      run: |
+        docker pull itbusina/testlemon:latest
+        docker run itbusina/testlemon:latest -c "$(<./examples/xray/manual-xray-provisioning.yaml)" -o output -f xray
+        ls

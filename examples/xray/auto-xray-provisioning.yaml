@@ -1,0 +1,22 @@
+
+name: Auto XRay provisioning collection
+baseUrl: https://dummyjson.com
+metadata:
+  - execution-description: "Auto XRay provisioning test execution description"
+  - revision: 1
+    version: 1.0.0
+    test-plan-key: "XSP-88"
+    environments: "DesktopChrome"
+tests:
+  - url: /products
+    name: Get all products
+    metadata:
+      - project-key: XSP
+        requirement-keys: XSP-84
+        definition: Validate that GET all products API returns 200 OK status
+  - url: /products/1
+    name: Get product by ID=1
+    metadata:
+      - project-key: XSP
+        requirement-keys: XSP-84
+        definition: Validate that GET product by ID API returns 200 OK status
