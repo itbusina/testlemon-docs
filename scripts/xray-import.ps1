@@ -23,4 +23,5 @@ try {
 catch {
     write-host $_.Exception.Message
     write-host $_.Exception
+    exit 1
 }
