@@ -1,4 +1,4 @@
-name: XRay automatic tests provisioning
+name: XRay manual tests provisioning
 
 on:
   #push:
