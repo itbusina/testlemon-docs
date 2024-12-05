@@ -1,4 +1,4 @@
-name: Example how to do XRAY manual tests provisioning
+name: XRay manual tests provisioning
 
 on:
   #push:
