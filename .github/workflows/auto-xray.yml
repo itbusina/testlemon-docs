@@ -17,7 +17,7 @@ jobs:
 
     - name: Run tests
       run: |
-        docker run itbusina/testlemon:latest -c "$(<./examples/xray/auto-xray-provisioning.yaml)" -o output.json -f xray
+        docker run -v .:/app/ itbusina/testlemon:latest -c "$(<./examples/xray/auto-xray-provisioning.yaml)" -o output.json -f xray
         TEST_RESULTS=$(<output.json)
         echo $TEST_RESULTS
         
