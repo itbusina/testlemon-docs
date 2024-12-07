@@ -43,7 +43,7 @@ jobs:
           args: |
             --collections ./src/tests/collection-4.json \
             --variables host=http://mynewapi:8080 \
-            --output output
+            --output output/output.json
         
     #- name: Build image and push
     #  uses: docker/build-push-action@v5.3.0
