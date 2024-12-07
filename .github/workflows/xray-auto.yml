@@ -1,4 +1,4 @@
-name: XRay automatic tests provisioning
+name: Xray automatic tests provisioning
 
 on:
   #push:
@@ -21,7 +21,7 @@ jobs:
         docker cp testlemon:/app/output.json output.json
         docker rm testlemon
 
-    - name: Upload test results to XRay
+    - name: Upload test results to Xray
       shell: pwsh
       run: |
         $client_id = "${{ secrets.XRAY_CLIENT_ID }}"

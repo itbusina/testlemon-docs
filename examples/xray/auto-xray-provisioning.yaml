@@ -1,7 +1,7 @@
-name: Auto XRay provisioning collection
+name: Auto Xray provisioning collection
 baseUrl: https://dummyjson.com
 metadata:
-  - execution-description: "Auto XRay provisioning test execution"
+  - execution-description: "Auto Xray provisioning test execution"
   - revision: 1
     version: 1.0.0
     test-plan-key: "XSP-88"

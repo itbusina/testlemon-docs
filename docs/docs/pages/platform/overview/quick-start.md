@@ -106,7 +106,7 @@ docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output.json
 docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output.json -f json
 ```
 
-## Save report to file in XRay format
+## Save report to file in Xray format
 ```shell
 docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output.json -f xray
 ```
