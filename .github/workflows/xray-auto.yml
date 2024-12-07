@@ -28,5 +28,5 @@ jobs:
         $client_secret = "${{ secrets.XRAY_CLIENT_SECRET }}"
         $jira_base_url = "${{ secrets.XRAY_JIRA_BASE_URL }}"
         $test_results = Get-Content "output.json"
-        ./scripts/xray-import.ps1 -client_id $client_id -client_secret $client_secret -jira_base_url $jira_base_url -test_results $test_results
+        ./scripts/xray-cloud-import.ps1 -client_id $client_id -client_secret $client_secret -jira_base_url $jira_base_url -test_results $test_results
         
