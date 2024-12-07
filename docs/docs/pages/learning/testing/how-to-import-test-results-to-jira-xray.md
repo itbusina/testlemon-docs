@@ -18,8 +18,8 @@ Jira Xray is a powerful test management tool integrated with Jira, designed to h
 ## Prerequisites for Xray integration
 Make sure you have Jira cloud or server instance with Xray installed. Please use Xray documentation for installation:
 
-- Jira Xray server: [server installation](https://docs.getXray.app/display/Xray/Installation)
-- Jira Xray cloud: [cloud installation](https://docs.getXray.app/display/XrayCLOUD/Installation)
+- Jira Xray server: [installation](https://docs.getXray.app/display/Xray/Installation)
+- Jira Xray cloud: [installation](https://docs.getXray.app/display/XrayCLOUD/Installation)
 
 ## Automatic Xray tests provisioning
 Automatic Xray tests provisioning process means that tests will be first created in Testlemon and then will be imported to Jira Xray.
