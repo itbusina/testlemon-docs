@@ -8,10 +8,12 @@ metadata:
     environments: "DesktopChrome"
 tests:
   - url: /users
+    name: Test all users API
     metadata:
       - test-key: XSP-85
         requirement-keys: XSP-83
   - url: /users/1
+    name: Test get user by id API
     metadata:
       - test-key: XSP-86
         requirement-keys: XSP-83
