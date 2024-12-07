@@ -96,9 +96,19 @@ docker run itbusina/testlemon:latest -c "$(<collection.json)" -p
 docker run itbusina/testlemon:latest -c "$(<collection.json)" -t smoke regression
 ```
 
-## Save report to output folder
+## Save report to file
 ```shell
-docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output.json
+```
+
+## Save report to file in JSON format
+```shell
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output.json -f json
+```
+
+## Save report to file in XRay format
+```shell
+docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output.json -f xray
 ```
 
 ## Pass variables in collection
