@@ -151,7 +151,7 @@ jobs:
           args: |
             --collections ./test/tests.json \
             --variables host=http://mynewapi:8080 \
-            --output output \
+            --output output/output.json \
             --license ${{ secrets.LICENSE }}
 ```
 
