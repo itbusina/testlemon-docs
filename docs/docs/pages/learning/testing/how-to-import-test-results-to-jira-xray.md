@@ -26,7 +26,7 @@ Automatic Xray tests provisioning process means that tests will be first created
 
 Go to top navigation menu and click Create button. 
 
-<img src="/images/integrations/xray/tutorial/auto/xray-1.png" alt="A screenshot of a Jira top navigation menu for Testlemon Jira Xray integration tutorial." width="400"/>
+<img src="/images/integrations/xray/tutorial/auto/xray-1.png" alt="A screenshot of a Jira top navigation menu for Testlemon Jira Xray integration tutorial." width="800"/>
 
 Create a new EPIC in JIRA. Choose issue type Epic click Create.
 
@@ -111,7 +111,7 @@ Manual Xray tests provisioning process means that tests are first created in Jir
 
 Go to top navigation menu and click Create button. 
 
-<img src="/images/integrations/xray/tutorial/manual/xray-1.png" alt="A screenshot of a Jira top navigation menu for Testlemon Jira Xray integration tutorial." width="400"/>
+<img src="/images/integrations/xray/tutorial/manual/xray-1.png" alt="A screenshot of a Jira top navigation menu for Testlemon Jira Xray integration tutorial." width="800"/>
 
 Create a new EPIC in JIRA. Choose issue type Epic click Create.
 
