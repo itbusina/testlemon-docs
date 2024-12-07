@@ -2,7 +2,7 @@
 
 Testlemon’s Jira XRay integration enables teams to import Testlemon tests results to XRay and track test executions and results in Jira
 
-## Important note:
+## Important
 Currently Jira XRay integration is available only with Testlemon Docker CLI tool.
 
 ## How to setup Testlemon
@@ -14,7 +14,7 @@ To generate the test results output in XRay format use ```-f xray``` flag.
 docker run itbusina/testlemon:latest -c "$(<collection.json)" -o output.json -f xray
 ```
 
-## Automatic provisioning
+## Automatic XRay tests provisioning
 <img src="/images/integrations/xray/xray-auto-provisioning.png" alt="Jira XRay automatic provisioning with Testlemon" width="800"/>
 
 1. Implement Testlemon test collection.
@@ -51,7 +51,7 @@ tests:
 
 After Tests are created in Jira, they can be managed in Jira. Thus, users can add additional information to them, associate them with other entities (e.g. requirements, Test Sets, etc)..
 
-## Manual provisioning
+## Manual XRay tests provisioning
 <img src="/images/integrations/xray/xray-manual-provisioning.png" alt="Jira XRay manual provisioning with Testlemon" width="800"/>
 
 1. Create a Generic Test in Jira.
@@ -81,7 +81,7 @@ tests:
       - test-key: XSP-86
 ```
 
-## Metadata fields
+## Test collection Metadata fields
 ```metadata``` fields on test collection level and test level are used to add aditional information to XRay report.
 
 Description:
@@ -110,15 +110,16 @@ tests:
 ```
 
 Notes:
+
 1. If ```execution-summary``` is not specified, test collection ```name``` will be used for execution summary.
 2. If ```execution-description``` is not specified, test collection ```name``` will be used for execution summary.
 3. If ```summary``` is not specified on the test level, the first not empty value will be used from the test: ```name```, ```id```, ```http method + url```
 4. If ```definition``` is not specified on the test level, the first not empty value will be used from the test: ```name```, ```id```, ```http method + url```
 
-## CI/CD configuration
+## CI/CD integration
 When Testlemon tests report is ready, it can be imported to XRay cloud or server versions using XRay REST API. It can be done on any CI/CD tools which support scripting (bash or powershell).
 
-Here is an example how to import testlemon xray report in GutHub actions:
+Here is a GitHub example how to import Testlemon report to Jira XRay:
 
 ```yaml
 name: XRay automatic tests provisioning
@@ -151,7 +152,9 @@ jobs:
         
 ```
 
-This pipeline example can be found [here](https://github.com/itbusina/testlemon-docs/blob/main/.github/workflows/xray-auto.yml)
+Pipeline example can be found [here](https://github.com/itbusina/testlemon-docs/blob/main/.github/workflows/xray-auto.yml)
 
-The test collection example can be found [here](https://github.com/itbusina/testlemon-docs/blob/main/examples/xray/auto-xray-provisioning.yaml)
+Test collection example can be found [here](https://github.com/itbusina/testlemon-docs/blob/main/examples/xray/auto-xray-provisioning.yaml)
 
+## Step by step tutorial
+Visit [How to import tests to Jira XRay](/pages/learning/testing/how-to-import-test-results-to-jira-xray) tutorial to see how to configure Testlemon reporting to Jira Xray.
