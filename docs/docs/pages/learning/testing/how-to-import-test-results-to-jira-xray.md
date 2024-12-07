@@ -188,10 +188,10 @@ Wait until it is completed and observe the logs.
 
 Open the Jira Story.
 
-<img src="/images/integrations/xray/tutorial/manual/ray-16.png" alt="A screenshot of a Jira story with Xray test results for Testlemon Jira Xray integration tutorial." width="800"/>
+<img src="/images/integrations/xray/tutorial/manual/xray-16.png" alt="A screenshot of a Jira story with Xray test results for Testlemon Jira Xray integration tutorial." width="800"/>
 
 Open test plan and observe the tests.
 
-<img src="/images/integrations/xray/tutorial/manual/xray-17.png" alt="A screenshot of a Jira Test Plan with Xray test results for Testlemon Jira Xray integration tutorial." width=800"/>
+<img src="/images/integrations/xray/tutorial/manual/xray-17.png" alt="A screenshot of a Jira Test Plan with Xray test results for Testlemon Jira Xray integration tutorial." width="800"/>
 
-Tests were auto-populated and execution results are stored in Jira Xray. Now you can link these tests to other stories, add them to other test plans or test sets.
+Tests were updated from Testlemon execution report and stored in Jira Xray.
