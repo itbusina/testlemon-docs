@@ -24,9 +24,6 @@ Make sure you have Jira cloud or server instance with Xray installed. Please use
 ## Automatic Xray tests provisioning
 Automatic Xray tests provisioning process means that tests will be first created in Testlemon and then will be imported to Jira Xray.
 
-### Create a requirement
-Before tests creation let's create a jira Epic, Story, Test plan and release.
-
 Go to top navigation menu and click Create button. 
 
 <img src="/images/integrations/xray/tutorial/auto/xray-1.png" alt="A screenshot of a Jira top navigation menu for Testlemon Jira Xray integration tutorial." width="400"/>
@@ -111,9 +108,6 @@ Tests were auto-populated and execution results are stored in Jira Xray. Now you
 
 ## Manual Xray tests provisioning
 Manual Xray tests provisioning process means that tests are first created in Jira Xray and then updated by results from Testlemon.
-
-### Create a requirement
-Before tests creation let's create a jira Epic, Story, Test plan and release.
 
 Go to top navigation menu and click Create button. 
 
