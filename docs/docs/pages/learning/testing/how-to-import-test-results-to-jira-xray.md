@@ -29,40 +29,31 @@ Before tests creation let's create a jira Epic, Story, Test plan and release.
 
 Go to top navigation menu and click Create button. 
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-1.png" alt="A screenshot of a Jira top navigation menu for Testlemon Jira Xray integration tutorial." width="400"/>
 
 Create a new EPIC in JIRA. Choose issue type Epic click Create.
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-2.png" alt="A screenshot of a Jira Epic creation for Testlemon Jira Xray integration tutorial." width="400"/>
 
 Create a new Story in JIRA. Go to top navigation menu and click Create button. Choose issue type Story, select parent Epic and click Create.
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-3.png" alt="A screenshot of a Jira Story creation for Testlemon Jira Xray integration tutorial." width="400"/>
 
 Create a new Test plan in JIRA. Go to top navigation menu and click Create button. Choose issue type Test Plan and click Create.
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-4.png" alt="A screenshot of a Jira Test Plan creation for Testlemon Jira Xray integration tutorial." width="400"/>
 
 Create a new Version. Go to left navigation menu Development > Relases. Click Create Version button and create a new version.
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-5.png" alt="A screenshot of a Jira Version creation for Testlemon Jira Xray integration tutorial." width="400"/>
 
 Create a new test environment. Go to left navigation menu Testing Board. Open Xray menu and click Configure Project. In Xray Settings choose Test Environments and create new environment.
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-6.png" alt="A screenshot of a Xray Testing Board menu for Testlemon Jira Xray integration tutorial." width="400"/>
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-7.png" alt="A screenshot of a Xray project configuration for Testlemon Jira Xray integration tutorial." width=400"/>
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-8.png" alt="A screenshot of a Xray project test environments for Testlemon Jira Xray integration tutorial." width="800"/>
-<br/>
 
 <img src="/images/integrations/xray/tutorial/xray-9.png" alt="A screenshot of a Xray test environment creation for Testlemon Jira Xray integration tutorial." width="400"/>
 
@@ -94,30 +85,26 @@ tests:
 
 Save test collection in version control.
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-10.png" alt="A screenshot of a Testlemon test environment in GitHub for Testlemon Jira Xray integration tutorial." width="800"/>
 
 Configure CI/CD pipeline to execute this test collection.
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-11.png" alt="A screenshot of a GitHub Action for Xray report import for Testlemon Jira Xray integration tutorial." width="800"/>
 
-Run the pipeline and wait until it is completed.
+Run the pipeline.
 
-<br/>
 <img src="/images/integrations/xray/tutorial/xray-12.png" alt="A screenshot of a GitHub pipeline trigger for Testlemon Jira Xray integration tutorial." width="800"/>
 
-<br/>
+Wait until it is completed and observe the logs.
+
 <img src="/images/integrations/xray/tutorial/xray-13.png" alt="A screenshot of a GitHub Action logs of Xray report import for Testlemon Jira Xray integration tutorial." width="800"/>
 
 Open the Jira Story.
 
-<br/>
-<img src="/images/integrations/xray/tutorial/xray-14.png" alt="A screenshot of a Jira story with Xray test results for Testlemon Jira Xray integration tutorial." width="600"/>
+<img src="/images/integrations/xray/tutorial/xray-14.png" alt="A screenshot of a Jira story with Xray test results for Testlemon Jira Xray integration tutorial." width="800"/>
 
 Open test plan and observe the tests.
 
-<br/>
-<img src="/images/integrations/xray/tutorial/xray-15.png" alt="A screenshot of a Jira Test Plan with Xray test results for Testlemon Jira Xray integration tutorial." width=600"/>
+<img src="/images/integrations/xray/tutorial/xray-15.png" alt="A screenshot of a Jira Test Plan with Xray test results for Testlemon Jira Xray integration tutorial." width=800"/>
 
 Tests were auto-populated and execution results are stored in Jira Xray. Now you can link these tests to other stories, add them to other test plans or test sets.
