@@ -24,11 +24,12 @@ nav:
       - Secrets: pages/platform/configuration/secrets.md
       - Tags: pages/platform/configuration/tags.md
     - Integrations:
-      - Slack integration: pages/platform/integrations/slack-integration.md
-      - GitHub integration: pages/platform/integrations/github-integration.md
       - CI/CD integration: pages/platform/integrations/ci-cd-integration.md
-      - Webhooks integration: pages/platform/integrations/webhook-integration.md
+      - GitHub integration: pages/platform/integrations/github-integration.md
+      - Jira XRay integration: pages/platform/integrations/jira-xray-integration.md
       - OpenAI integration: pages/platform/integrations/openai-integration.md
+      - Slack integration: pages/platform/integrations/slack-integration.md
+      - Webhooks integration: pages/platform/integrations/webhook-integration.md
   - Learning Center:
     - Testing:
       - REST API: pages/learning/testing/rest-api.md
@@ -37,6 +38,7 @@ nav:
       #- Test automation: coming-soon.md
       - How to test API with Testlemon: pages/learning/testing/how-to-test-api-with-testlemon.md
       - Test end-to-end API workflows in Testlemon: pages/learning/testing/test-end-to-end-api-workflows-in-testlemon.md
+      - How to import tests to Jira XRay: pages/learning/testing/how-to-import-test-results-to-jira-xray.md
     - Monitoring:
       - Uptime monitoring: pages/learning/monitoring/uptime-monitoring.md
       - SSL monitoring: pages/learning/monitoring/ssl-monitoring.md
