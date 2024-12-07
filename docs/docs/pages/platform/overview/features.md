@@ -4,27 +4,30 @@ Here is a list of main features which can be used with Testlemon
 
 ## Overview
 
-- Web uptime monitoring
-- SSL monitoring
-- Domain monitoring
-- DNS monitoring
-- API test automation
-- Functional testing
+- Test automation
+- API functional testing
 - Sentiment validation
 - AI assertions
 - Sitemap validators
-- GitHub Actions Integration
+- Website monitoring
+- Uptime monitoring
+- SSL monitoring
+- Domain monitoring
+- DNS monitoring
+- DMARC validation
+- DKIM validation
+- GitHub Integration
 - Email notifications
 - Slack notifications 
-- YAML & JSON configs
+- YAML & JSON configurations
+- Tagging for tests suites
 - Secrets and variables
-- Tests dependencies
+- Tests chaining
 - SaaS App
-- SaaS APIs
+- Developer APIs
 - CLI tool
 - Available in docker
 - Maintenance window
 - Status page
 - Project badges
-- Tagging for tests suites
 - Online documentation
