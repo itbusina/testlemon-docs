@@ -3,7 +3,7 @@
 _Last updated: June 29, 2025_
 
 ## 1. Introduction
-These User Terms of Use ("Terms") are a legal agreement between you ("you") and IT Busina Kiryl Bahdanovich ("ITBUSINA", "Company", "we", "us", or "our"). These Terms govern your use of all versions of the TestLemon software, including TestLemon Docker images, and the TestLemon websites, including but not limited to https://testlemon.com (the "Website"), https://app.testlemon.com (the "Platform", "Tool", or "App"), and https://hub.docker.com/r/itbusina/testlemon (the "Docker" or "TestLemon CLI").
+These User Terms of Use ("Terms") are a legal agreement between you ("you") and IT Busina Kiryl Bahdanovich ("ITBUSINA", "Company", "we", "us", or "our"). These Terms govern your use of all versions of the TestLemon software, including TestLemon Docker images, and the TestLemon websites, including but not limited to [https://testlemon.com](https://testlemon.com) (the "Website"), [https://app.testlemon.com](https://app.testlemon.com) (the "Platform", "Tool", or "App"), and [https://hub.docker.com/r/itbusina/testlemon](https://hub.docker.com/r/itbusina/testlemon) (the "Docker" or "TestLemon CLI").
 
 ## 2. Acceptance of Terms
 By accessing the Website, downloading, running, or using the Service, you agree to be bound by these Terms, all applicable laws, and regulations. If you do not agree with any part of these Terms, you must not use the Service or the Website.
@@ -56,4 +56,4 @@ These Terms, including the Privacy Policy, constitute the entire agreement betwe
 Our Privacy Policy describes how we collect, use, store, and disclose your personal information. By using the Service or Website, you agree to the collection, use, storage, and disclosure of your data in accordance with the Privacy Policy.
 
 ## 12. Contact Information
-If you have any questions about these Terms, please contact us by **email** at contact@testlemon.com or contact@itbusina.com.
+If you have any questions about these Terms, please contact us by **email** at [contact@testlemon.com](mailto:contact@testlemon.com) or [contact@itbusina.com](mailto:contact@itbusina.com).

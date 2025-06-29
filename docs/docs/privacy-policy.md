@@ -4,7 +4,7 @@ _Last updated: June 29, 2025_
 ## Introduction
 
 
-Welcome to TestLemon (the "Product"), developed by IT Busina Kiryl Bahdanovich (the "Company", "we", or "us"). We are committed to protecting your privacy. This Privacy Policy explains how TestLemon, https://testlemon.com (the "Website"), and https://app.testlemon.com (the "Platform", "Tool", or "App"), and https://hub.docker.com/r/itbusina/testlemon (the "Docker", or "Testlemon CLI") collect, use, disclose, and safeguard your information. By using the Service, Website, or Platform, you agree to the terms of this Privacy Policy.
+Welcome to TestLemon (the "Product"), developed by IT Busina Kiryl Bahdanovich (the "Company", "we", or "us"). We are committed to protecting your privacy. This Privacy Policy explains how TestLemon, [https://testlemon.com](https://testlemon.com) (the "Website"), [https://app.testlemon.com](https://app.testlemon.com) (the "Platform", "Tool", or "App"), and [https://hub.docker.com/r/itbusina/testlemon](https://hub.docker.com/r/itbusina/testlemon) (the "Docker", or "Testlemon CLI") collect, use, disclose, and safeguard your information. By using the Service, Website, or Platform, you agree to the terms of this Privacy Policy.
 
 
 ## Information We Collect
@@ -86,4 +86,4 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 
 ## Contact Us
 
-If you have any questions or concerns about this Privacy Policy or our data practices, please contact us by **email:** contact@testlemon.com or contact@itbusina.com
+If you have any questions or concerns about this Privacy Policy or our data practices, please contact us by **email:** [contact@testlemon.com](mailto:contact@testlemon.com) or [contact@itbusina.com](mailto:contact@itbusina.com)
