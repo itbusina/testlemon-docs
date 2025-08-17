@@ -1,3 +1,7 @@
+---
+description: "Learn how to test end-to-end API workflows using TestLemon. Comprehensive guide for creating complex API test scenarios, chaining requests, and validating complete user journeys in your applications."
+---
+
 # Test end-to-end API workflows in Testlemon
 
 _November 18, 2024_

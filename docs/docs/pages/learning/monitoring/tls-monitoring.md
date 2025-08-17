@@ -1,3 +1,7 @@
+---
+description: "Understand the importance of TLS monitoring for website security. Learn how TestLemon ensures your site uses secure TLS 1.3 protocols and protects against outdated TLS versions and security vulnerabilities."
+---
+
 # Why TLS Monitoring is Essential for Your Website Security
 
 <img src="/images/monitoring/tls-1.png" alt="TLS monitoring with Testlemon" width="1000"/>

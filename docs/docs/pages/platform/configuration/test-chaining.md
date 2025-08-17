@@ -1,3 +1,7 @@
+---
+description: "Master test chaining in TestLemon to create complex API workflows. Learn how to link tests, pass data between requests, and build sophisticated testing scenarios with dependencies."
+---
+
 # Chaining tests in test collection
 
 Test chaining is essential for verifying complex scenarios where one test’s outcome directly influences another or when executing end-to-end workflows. By configuring test dependencies, it’s possible to seamlessly pass data between tests, enabling a cohesive and comprehensive testing process.

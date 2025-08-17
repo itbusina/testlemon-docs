@@ -1,3 +1,7 @@
+---
+description: "Securely manage sensitive data in TestLemon with secrets configuration. Learn how to store API keys, passwords, and credentials safely for secure API testing and automation."
+---
+
 # Using secrets in test collection
 
 Secrets are used to securely store sensitive information such as API keys, passwords, or tokens that are essential for application functionality. It is crucial to handle secrets with care by using dedicated secret management tools or encrypted storage mechanisms. Avoid hardcoding secrets in your codebase or storing them in plain text files to prevent unauthorized access and ensure compliance with security best practices.

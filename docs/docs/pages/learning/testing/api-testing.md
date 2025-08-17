@@ -1,3 +1,7 @@
+---
+description: "Master API testing with our comprehensive guide. Learn functional and non-functional testing, authentication, validation, performance testing, and best practices for REST APIs using TestLemon and popular tools."
+---
+
 # What is API Testing: Comprehensive Guide for Developers and Testers.
 
 _November 20, 2024_

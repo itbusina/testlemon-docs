@@ -1,3 +1,7 @@
+---
+description: "TestLemon privacy policy explaining how we collect, use, and protect your personal data. Learn about our data practices, security measures, and your privacy rights when using our testing platform."
+---
+
 # Privacy Policy
 _Last updated: June 29, 2025_
 

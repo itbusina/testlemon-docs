@@ -1,3 +1,7 @@
+---
+description: "Learn how DNS monitoring protects your website from security threats and performance issues. Explore TestLemon's DNS monitoring capabilities for real-time detection of misconfigurations and malicious activity."
+---
+
 # Understanding the Role of DNS Monitoring
 
 <img src="/images/monitoring/dns-1.png" alt="TLS monitoring with Testlemon" width="1000"/>

@@ -1,3 +1,7 @@
+---
+description: "Create comprehensive test collections in TestLemon using YAML or JSON formats. Learn how to organize test cases, configure API endpoints, and structure your testing suite for maximum efficiency."
+---
+
 # Test collections
 
 Test collection refers to a comprehensive set of test cases, test scripts, or test scenarios that are organized for evaluating a specific software application, feature, or system. The purpose of a test collection is to ensure thorough testing by systematically covering all functional and non-functional requirements.

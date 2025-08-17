@@ -1,3 +1,7 @@
+---
+description: "Configure OpenAI integration in TestLemon for AI-powered testing capabilities. Learn how to add your OpenAI API key to enable AI validators, smart assertions, and intelligent test analysis features."
+---
+
 # How to add OpenAI API key to Testlemon
 
 Testlemon’s is powered by OpenAI LLM capabilities. The integration is used in test collection functions and AI validators.

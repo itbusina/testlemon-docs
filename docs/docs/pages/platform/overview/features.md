@@ -1,3 +1,7 @@
+---
+description: "Discover TestLemon's comprehensive testing features: API testing, website monitoring, AI assertions, SSL/TLS monitoring, DNS validation, GitHub integration, and automated CI/CD workflows. Try our powerful testing platform."
+---
+
 # Testlemon features
 
 Here is a list of main features which can be used with Testlemon

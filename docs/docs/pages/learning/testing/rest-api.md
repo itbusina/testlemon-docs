@@ -1,3 +1,7 @@
+---
+description: "Learn what REST APIs are and their key features. Discover REST API testing best practices, benefits, and how to test RESTful services for scalability, security, and performance using modern testing tools."
+---
+
 # What is REST API ?
 
 _November 20, 2024_

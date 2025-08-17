@@ -1,3 +1,7 @@
+---
+description: "Extend TestLemon's capabilities with custom functions. Learn how to create reusable code snippets, data transformations, and advanced logic for sophisticated API testing scenarios."
+---
+
 # Using functions in test collections
 
 Testlemon has build-in functions to extend the tests collections.

@@ -1,3 +1,7 @@
+---
+description: "Integrate TestLemon with Jira Xray for comprehensive test management. Learn how to import test results, track executions, and manage test reporting in Jira using TestLemon's Xray integration."
+---
+
 # How to integrate Testlemon with Xray for JIRA
 
 Testlemon’s Jira Xray integration enables teams to import Testlemon tests results to Xray and track test executions and results in Jira

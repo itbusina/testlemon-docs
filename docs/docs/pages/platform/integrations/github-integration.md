@@ -1,3 +1,7 @@
+---
+description: "Integrate TestLemon with GitHub Actions for automated API testing in CI/CD pipelines. Learn how to set up GitHub workflows, run tests, and automate quality checks with TestLemon's GitHub integration."
+---
+
 # How to integrate Testlemon in GitHub pipeline
 
 Testlemon has GitHub actions integration for seamless integration to your build pipeline.

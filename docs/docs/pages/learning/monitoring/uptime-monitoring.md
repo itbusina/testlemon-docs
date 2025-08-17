@@ -1,3 +1,7 @@
+---
+description: "Learn why uptime monitoring is crucial for your website's SEO performance and user experience. Discover how TestLemon's uptime monitoring protects your business from downtime and maintains reliability."
+---
+
 # Why Uptime Monitoring Matters for Your Website
 
 <img src="/images/monitoring/uptime-1.png" alt="Uptime website monitoring with Testlemon" width="1000"/>

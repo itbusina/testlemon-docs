@@ -1,4 +1,8 @@
 
+---
+description: "TestLemon terms of use and legal agreement. Review our user guidelines, prohibited conduct, intellectual property rights, liability limitations, and legal obligations when using our testing platform."
+---
+
 # Terms of Use
 _Last updated: June 29, 2025_
 

@@ -1,3 +1,7 @@
+---
+description: "Step-by-step guide to import TestLemon test results into Jira Xray. Learn how to configure Xray integration, export test data, and automate test reporting for better project management and traceability."
+---
+
 # How to import test results to Jira Xray
 
 _December 7, 2024_

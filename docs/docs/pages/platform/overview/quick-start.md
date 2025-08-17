@@ -1,3 +1,7 @@
+---
+description: "Get started with TestLemon quickly. Learn how to create API test collections, run Docker containers, set up monitoring, and execute automated tests with simple YAML or JSON configurations."
+---
+
 # Quick start
 
 There are multiple options how to run test collection. Follow the steps below to create a collection and run the tests.

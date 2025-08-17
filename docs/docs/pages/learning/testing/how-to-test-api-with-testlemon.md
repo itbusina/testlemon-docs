@@ -1,3 +1,7 @@
+---
+description: "Learn how to test API endpoints effectively using TestLemon. Comprehensive guide covering test case creation, automation, CI/CD integration, and best practices for API testing with practical examples."
+---
+
 # How to Test API Endpoints using Testlemon
 
 _November 17, 2024_

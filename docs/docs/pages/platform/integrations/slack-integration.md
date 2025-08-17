@@ -1,3 +1,7 @@
+---
+description: "Set up Slack notifications in TestLemon for instant alerts about test failures and issues. Step-by-step guide to configure webhook integration and receive real-time notifications in your Slack channels."
+---
+
 # How to integrate Slack notifications in Testlemon
 
 Testlemon’s Slack integration enables teams to receive instant notifications about issues and test failures, ensuring timely awareness and quicker resolution.
