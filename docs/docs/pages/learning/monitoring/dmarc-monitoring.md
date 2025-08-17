@@ -1,5 +1,5 @@
 ---
-site_description: "Learn how DMARC monitoring protects your domain from email spoofing and phishing attacks. Discover key benefits, configuration steps, and how TestLemon's automated DMARC monitoring helps maintain email security and deliverability."
+description: "Learn how DMARC monitoring protects your domain from email spoofing and phishing attacks. Discover key benefits, configuration steps, and how TestLemon's automated DMARC monitoring helps maintain email security and deliverability."
 ---
 
 # Protecting Your Domain with DMARC Monitoring
